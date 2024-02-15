@@ -1,5 +1,6 @@
 package edu.sharif.monoplytest;
 
+import edu.sharif.monoplytest.model.Player;
 import edu.sharif.monoplytest.view.StageSettings;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -20,7 +21,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class Main extends Application {
-
     Scene scene;
     public Parent root;
     public Parent CreateContent(Stage stage) throws IOException{
@@ -34,7 +34,6 @@ public class Main extends Application {
 
         timer.start();
 
-
         Parent fxmlLoader = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("hello-view.fxml")));
         root = fxmlLoader;
         return root;
@@ -46,6 +45,14 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         scene  = new Scene(CreateContent(stage));
         StageSettings.CreateStage(stage , scene);
+
+        //create players
+        Player player1 = new Player(1);
+        Player player2 = new Player(2);
+        Player player3 = new Player(3);
+        Player player4 = new Player(4);
+        GameState.currentTurn = player1;
+
 
     }
     public static void main(String[] args) {
