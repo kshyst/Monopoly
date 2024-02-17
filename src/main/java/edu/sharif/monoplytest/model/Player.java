@@ -29,17 +29,33 @@ public class Player {
         GameState.playersList.add(this);
     }
 
-    public Player(int playerId) {
+    public Player(int playerId , int balance) {
         this.playerId = playerId;
+        this.balance = balance;
         this.position = 0;
         GameState.playersList.add(this);
     }
-    /////////////////////getters and setters///////////////////////////
+
     public int getPosition() {
         return position;
     }
 
     public void setPosition(int position) {
         this.position = position;
+    }
+    public ArrayList<Tile> getOwnedTiles() {
+        return ownedTiles;
+    }
+
+    public void setOwnedTiles(ArrayList<Tile> ownedTiles) {
+        this.ownedTiles = ownedTiles;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 }

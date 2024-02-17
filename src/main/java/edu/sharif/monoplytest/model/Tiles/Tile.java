@@ -13,8 +13,25 @@ public class Tile {
     public ArrayList<Circle> playersPos = new ArrayList<>();
     public Pane pane;
 
-    private void x(){
-        Circle circle = (Circle) pane.getChildren().get(1);
+    public Tile(int tilePosition, String tileType) {
+        this.tilePosition = tilePosition;
+        this.tileType = tileType;
+    }
+
+    public String getTileType() {
+        return tileType;
+    }
+
+    public void setTileType(String tileType) {
+        this.tileType = tileType;
+    }
+
+    public int getTilePosition() {
+        return tilePosition;
+    }
+
+    public void setTilePosition(int tilePosition) {
+        this.tilePosition = tilePosition;
     }
 
 }

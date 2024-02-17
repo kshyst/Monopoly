@@ -47,11 +47,15 @@ public class Main extends Application {
         StageSettings.CreateStage(stage , scene);
 
         //create players
-        Player player1 = new Player(1);
-        Player player2 = new Player(2);
-        Player player3 = new Player(3);
-        Player player4 = new Player(4);
+        Player player1 = new Player(1 , 500 );
+        Player player2 = new Player(2 , 550);
+        Player player3 = new Player(3 , 600);
+        Player player4 = new Player(4 , 650);
         GameState.currentTurn = player1;
+        GameState.playersList.set(0 , player1);
+        GameState.playersList.set(1 , player2);
+        GameState.playersList.set(2 , player3);
+        GameState.playersList.set(3 , player4);
 
 
     }
