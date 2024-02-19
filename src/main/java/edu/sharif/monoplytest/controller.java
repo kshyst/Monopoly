@@ -185,6 +185,7 @@ public class controller {
     private Circle circle4_25;
     private Circle circle4_26;
     private Circle circle4_27;
+    //TODO
 
     public ArrayList<Circle> circleList = new ArrayList<Circle>();
 
@@ -236,6 +237,7 @@ public class controller {
             }
         }
 
+        //TODO
     }
     //go to next turn
     @FXML
@@ -404,6 +406,7 @@ public class controller {
         ((Pane)circleList.get(0).getParent()).getChildren().add(playersList.get(0).getPlayerNode());
         playersList.get(0).getPlayerNode().setLayoutX(circleList.get(0).getLayoutX());
         playersList.get(0).getPlayerNode().setLayoutY(circleList.get(0).getLayoutY());
+        //TODO
     }
     private void updatePlayersBalances(){
         player1Balance.setText("1$ : " + GameState.playersList.get(0).getBalance());
