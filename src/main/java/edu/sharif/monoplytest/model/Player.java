@@ -29,10 +29,11 @@ public class Player {
         GameState.playersList.add(this);
     }
 
-    public Player(int playerId , int balance) {
+    public Player(int playerId , int balance , Node playerNode) {
         this.playerId = playerId;
         this.balance = balance;
         this.position = 0;
+        this.playerNode = playerNode;
         GameState.playersList.add(this);
     }
 
@@ -57,5 +58,25 @@ public class Player {
 
     public void setBalance(int balance) {
         this.balance = balance;
+    }
+
+    public int getPlayerId() {
+        return playerId;
+    }
+
+    public void setPlayerId(int playerId) {
+        this.playerId = playerId;
+    }
+
+    public Node getPlayerNode() {
+        return playerNode;
+    }
+
+    public void setPlayerNode(Node playerNode) {
+        this.playerNode = playerNode;
+    }
+
+    public boolean arePlayersEqual(int playerId){
+        return this.playerId == playerId;
     }
 }

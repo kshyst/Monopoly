@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.shape.Circle;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -40,6 +41,154 @@ public class controller {
     private Label player3Balance;
     @FXML
     private Label player4Balance;
+    //circles
+    @FXML
+    private Circle circle1_0;
+    @FXML
+    private Circle circle1_1;
+    @FXML
+    private Circle circle1_2;
+    @FXML
+    private Circle circle1_3;
+    @FXML
+    private Circle circle1_4;
+    @FXML
+    private Circle circle1_5;
+    @FXML
+    private Circle circle1_6;
+    @FXML
+    private Circle circle1_7;
+    @FXML
+    private Circle circle1_8;
+    @FXML
+    private Circle circle1_9;
+    @FXML
+    private Circle circle1_10;
+    @FXML
+    private Circle circle1_11;
+    @FXML
+    private Circle circle1_12;
+    @FXML
+    private Circle circle1_13;
+    @FXML
+    private Circle circle1_14;
+    @FXML
+    private Circle circle1_15;
+    @FXML
+    private Circle circle1_16;
+    @FXML
+    private Circle circle1_17;
+    @FXML
+    private Circle circle1_18;
+    @FXML
+    private Circle circle1_19;
+    @FXML
+    private Circle circle1_20;
+    @FXML
+    private Circle circle1_21;
+    @FXML
+    private Circle circle1_22;
+    @FXML
+    private Circle circle1_23;
+    @FXML
+    private Circle circle1_24;
+    @FXML
+    private Circle circle1_25;
+    @FXML
+    private Circle circle1_26;
+    @FXML
+    private Circle circle1_27;
+
+    private Circle circle2_0;
+    private Circle circle2_1;
+    private Circle circle2_2;
+    private Circle circle2_3;
+    private Circle circle2_4;
+    private Circle circle2_5;
+    private Circle circle2_6;
+    private Circle circle2_7;
+    private Circle circle2_8;
+    private Circle circle2_9;
+    private Circle circle2_10;
+    private Circle circle2_11;
+    private Circle circle2_12;
+    private Circle circle2_13;
+    private Circle circle2_14;
+    private Circle circle2_15;
+    private Circle circle2_16;
+    private Circle circle2_17;
+    private Circle circle2_18;
+    private Circle circle2_19;
+    private Circle circle2_20;
+    private Circle circle2_21;
+    private Circle circle2_22;
+    private Circle circle2_23;
+    private Circle circle2_24;
+    private Circle circle2_25;
+    private Circle circle2_26;
+    private Circle circle2_27;
+
+    private Circle circle3_0;
+    private Circle circle3_1;
+    private Circle circle3_2;
+    private Circle circle3_3;
+    private Circle circle3_4;
+    private Circle circle3_5;
+    private Circle circle3_6;
+    private Circle circle3_7;
+    private Circle circle3_8;
+    private Circle circle3_9;
+    private Circle circle3_10;
+    private Circle circle3_11;
+    private Circle circle3_12;
+    private Circle circle3_13;
+    private Circle circle3_14;
+    private Circle circle3_15;
+    private Circle circle3_16;
+    private Circle circle3_17;
+    private Circle circle3_18;
+    private Circle circle3_19;
+    private Circle circle3_20;
+    private Circle circle3_21;
+    private Circle circle3_22;
+    private Circle circle3_23;
+    private Circle circle3_24;
+    private Circle circle3_25;
+    private Circle circle3_26;
+    private Circle circle3_27;
+
+    private Circle circle4_0;
+    private Circle circle4_1;
+    private Circle circle4_2;
+    private Circle circle4_3;
+    private Circle circle4_4;
+    private Circle circle4_5;
+    private Circle circle4_6;
+    private Circle circle4_7;
+    private Circle circle4_8;
+    private Circle circle4_9;
+    private Circle circle4_10;
+    private Circle circle4_11;
+    private Circle circle4_12;
+    private Circle circle4_13;
+    private Circle circle4_14;
+    private Circle circle4_15;
+    private Circle circle4_16;
+    private Circle circle4_17;
+    private Circle circle4_18;
+    private Circle circle4_19;
+    private Circle circle4_20;
+    private Circle circle4_21;
+    private Circle circle4_22;
+    private Circle circle4_23;
+    private Circle circle4_24;
+    private Circle circle4_25;
+    private Circle circle4_26;
+    private Circle circle4_27;
+
+    public ArrayList<Circle> circleList = new ArrayList<Circle>();
+
+
     //DiceRoller
     public static int dice1;
     private ArrayList<Image> dicePics = new ArrayList<Image>(){
@@ -64,7 +213,7 @@ public class controller {
 
         dice1Pic.setImage(dicePics.get(dice1 - 1));
 
-        GameState.currentTurn.setPosition((GameState.currentTurn.getPosition() + dice1 ) % 39);
+        GameState.currentTurn.setPosition((GameState.currentTurn.getPosition() + dice1 ) % 27);
 
         //set the status of buy button
         if (getCurrentTileOfCurrentPlayer().getTileType().compareTo("ColoredTiles") == 0){
@@ -73,7 +222,18 @@ public class controller {
                     buyButton.setDisable(false);
                 }
             }
+            else{
+                //player on its owned tile
+                if (((ColoredTiles)getCurrentTileOfCurrentPlayer()).getOwner().arePlayersEqual(currentTurn.playerId)){
 
+                }
+
+                //get rent
+                if (!((ColoredTiles)getCurrentTileOfCurrentPlayer()).getOwner().arePlayersEqual(currentTurn.playerId)){
+                    currentTurn.setBalance(currentTurn.getBalance() - ((ColoredTiles)getCurrentTileOfCurrentPlayer()).getTileRent());
+                    updatePlayersBalances();
+                }
+            }
         }
 
     }
@@ -128,6 +288,122 @@ public class controller {
 
         updatePlayersBalances();
         initializeTiles();
+
+        circleList.add(circle1_0);
+        circleList.add(circle1_1);
+        circleList.add(circle1_2);
+        circleList.add(circle1_3);
+        circleList.add(circle1_4);
+        circleList.add(circle1_5);
+        circleList.add(circle1_6);
+        circleList.add(circle1_7);
+        circleList.add(circle1_8);
+        circleList.add(circle1_9);
+        circleList.add(circle1_10);
+        circleList.add(circle1_11);
+        circleList.add(circle1_12);
+        circleList.add(circle1_13);
+        circleList.add(circle1_14);
+        circleList.add(circle1_15);
+        circleList.add(circle1_16);
+        circleList.add(circle1_17);
+        circleList.add(circle1_18);
+        circleList.add(circle1_19);
+        circleList.add(circle1_20);
+        circleList.add(circle1_21);
+        circleList.add(circle1_22);
+        circleList.add(circle1_23);
+        circleList.add(circle1_24);
+        circleList.add(circle1_25);
+        circleList.add(circle1_26);
+        circleList.add(circle1_27);
+        circleList.add(circle2_0);
+        circleList.add(circle2_1);
+        circleList.add(circle2_2);
+        circleList.add(circle2_3);
+        circleList.add(circle2_4);
+        circleList.add(circle2_5);
+        circleList.add(circle2_6);
+        circleList.add(circle2_7);
+        circleList.add(circle2_8);
+        circleList.add(circle2_9);
+        circleList.add(circle2_10);
+        circleList.add(circle2_11);
+        circleList.add(circle2_12);
+        circleList.add(circle2_13);
+        circleList.add(circle2_14);
+        circleList.add(circle2_15);
+        circleList.add(circle2_16);
+        circleList.add(circle2_17);
+        circleList.add(circle2_18);
+        circleList.add(circle2_19);
+        circleList.add(circle2_20);
+        circleList.add(circle2_21);
+        circleList.add(circle2_22);
+        circleList.add(circle2_23);
+        circleList.add(circle2_24);
+        circleList.add(circle2_25);
+        circleList.add(circle2_26);
+        circleList.add(circle2_27);
+        circleList.add(circle3_0);
+        circleList.add(circle3_1);
+        circleList.add(circle3_2);
+        circleList.add(circle3_3);
+        circleList.add(circle3_4);
+        circleList.add(circle3_5);
+        circleList.add(circle3_6);
+        circleList.add(circle3_7);
+        circleList.add(circle3_8);
+        circleList.add(circle3_9);
+        circleList.add(circle3_10);
+        circleList.add(circle3_11);
+        circleList.add(circle3_12);
+        circleList.add(circle3_13);
+        circleList.add(circle3_14);
+        circleList.add(circle3_15);
+        circleList.add(circle3_16);
+        circleList.add(circle3_17);
+        circleList.add(circle3_18);
+        circleList.add(circle3_19);
+        circleList.add(circle3_20);
+        circleList.add(circle3_21);
+        circleList.add(circle3_22);
+        circleList.add(circle3_23);
+        circleList.add(circle3_24);
+        circleList.add(circle3_25);
+        circleList.add(circle3_26);
+        circleList.add(circle3_27);
+        circleList.add(circle4_1);
+        circleList.add(circle4_2);
+        circleList.add(circle4_3);
+        circleList.add(circle4_4);
+        circleList.add(circle4_5);
+        circleList.add(circle4_6);
+        circleList.add(circle4_7);
+        circleList.add(circle4_8);
+        circleList.add(circle4_9);
+        circleList.add(circle4_10);
+        circleList.add(circle4_11);
+        circleList.add(circle4_12);
+        circleList.add(circle4_13);
+        circleList.add(circle4_14);
+        circleList.add(circle4_15);
+        circleList.add(circle4_16);
+        circleList.add(circle4_17);
+        circleList.add(circle4_18);
+        circleList.add(circle4_19);
+        circleList.add(circle4_20);
+        circleList.add(circle4_21);
+        circleList.add(circle4_22);
+        circleList.add(circle4_23);
+        circleList.add(circle4_24);
+        circleList.add(circle4_25);
+        circleList.add(circle4_26);
+        circleList.add(circle4_27);
+
+        ((Pane)circleList.get(0).getParent()).getChildren().add(playersList.get(0).getPlayerNode());
+        playersList.get(0).getPlayerNode().setLayoutX(circleList.get(0).getLayoutX());
+        playersList.get(0).getPlayerNode().setLayoutY(circleList.get(0).getLayoutY());
     }
     private void updatePlayersBalances(){
         player1Balance.setText("1$ : " + GameState.playersList.get(0).getBalance());
