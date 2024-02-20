@@ -289,11 +289,18 @@ public class controller {
     private ImageView dice1Pic;
     @FXML
     public void diceRoller(){
-        GameState.canRollDice = false;
-        diceRollerButton.setDisable(true);
-        goToNextButton.setDisable(false);
         Random random = new Random();
         dice1 = Dice.getDice();
+        if(dice1 == 6){
+            GameState.canRollDice = true;
+            diceRollerButton.setDisable(false);
+            goToNextButton.setDisable(true);
+        }
+        else {
+            GameState.canRollDice = false;
+            diceRollerButton.setDisable(true);
+            goToNextButton.setDisable(false);
+        }
 
         dice1Pic.setImage(dicePics.get(dice1 - 1));
 
