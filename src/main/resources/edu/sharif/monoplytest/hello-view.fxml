@@ -60,6 +60,11 @@
                               <Circle fx:id="circle2_10" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_10" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_10" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@TileSprites/markazgraphic.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
@@ -84,6 +89,11 @@
                               <Circle fx:id="circle2_12" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_12" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_12" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@TileSprites/alef0.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
@@ -96,6 +106,11 @@
                               <Circle fx:id="circle2_13" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_13" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_13" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@TileSprites/anjomaneslami.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
@@ -124,6 +139,11 @@
                               <Circle fx:id="circle2_6" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_6" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_6" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                                 <image>
+                                    <Image url="@TileSprites/abdoos.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
@@ -145,6 +165,11 @@
                               <Circle fx:id="circle2_15" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_15" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_15" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+                                 <image>
+                                    <Image url="@TileSprites/cluna.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children></VBox>
@@ -160,6 +185,7 @@
                               <Circle fx:id="circle2_5" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_5" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_5" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </Pane>
                      </children>
@@ -181,6 +207,11 @@
                               <Circle fx:id="circle2_16" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_16" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_16" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+                                 <image>
+                                    <Image url="@TileSprites/ghorfehsoboone.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
@@ -197,6 +228,11 @@
                               <Circle fx:id="circle2_4" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_4" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_4" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                                 <image>
+                                    <Image url="@TileSprites/avang.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
@@ -218,6 +254,11 @@
                               <Circle fx:id="circle2_17" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_17" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_17" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+                                 <image>
+                                    <Image url="@TileSprites/JAKOOZ.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
@@ -234,6 +275,11 @@
                               <Circle fx:id="circle2_3" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_3" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_3" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                                 <image>
+                                    <Image url="@TileSprites/newyork.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
@@ -266,9 +312,9 @@
                      <children>
                         <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: LIME;">
                            <children>
-                              <ImageView fitHeight="100.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="150.0" fitWidth="100.0" layoutX="25.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                                  <image>
-                                    <Image url="@TileSprites/Sprite-0001.png" />
+                                    <Image url="@TileSprites/arsheh.png" />
                                  </image>
                               </ImageView>
                               <Circle fx:id="circle1_2" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
@@ -307,9 +353,9 @@
                      <children>
                         <Pane minWidth="150.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: LIME;">
                            <children>
-                              <ImageView fitHeight="100.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="150.0" fitWidth="106.0" layoutX="25.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                                  <image>
-                                    <Image url="@TileSprites/Sprite-0001.png" />
+                                    <Image url="@TileSprites/kelisa.png" />
                                  </image>
                               </ImageView>
                               <Circle fx:id="circle1_1" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
@@ -368,6 +414,11 @@
                               <Circle fx:id="circle2_27" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_27" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_27" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@TileSprites/dakhme.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
@@ -380,6 +431,11 @@
                               <Circle fx:id="circle2_26" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_26" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_26" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@TileSprites/aquarium.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
@@ -392,6 +448,11 @@
                               <Circle fx:id="circle2_25" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_25" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_25" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@TileSprites/LOOP.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
@@ -404,6 +465,11 @@
                               <Circle fx:id="circle2_24" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_24" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_24" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@TileSprites/lobby.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>

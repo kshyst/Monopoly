@@ -66,6 +66,7 @@ public class Main extends Application {
         GameState.playersList.set(1 , player2);
         GameState.playersList.set(2 , player3);
         GameState.playersList.set(3 , player4);
+
     }
     public static void main(String[] args) {
         launch(args);
