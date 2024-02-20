@@ -50,9 +50,9 @@ public class Main extends Application {
 
         //create players
         Player player1 = new Player(1 , 500, new Circle(5,5,5,Color.WHITE));
-        Player player2 = new Player(2 , 550, new Circle(5,5,5,Color.WHITE));
-        Player player3 = new Player(3 , 600, new Circle(5,5,5,Color.WHITE));
-        Player player4 = new Player(4 , 650, new Circle(5,5,5,Color.WHITE));
+        Player player2 = new Player(2 , 550, new Circle(5,5,5,Color.rgb(102 , 0 , 51)));
+        Player player3 = new Player(3 , 600, new Circle(5,5,5,Color.rgb(0,152,51)));
+        Player player4 = new Player(4 , 650, new Circle(5,5,5,Color.rgb(51,51,255)));
 
         controller controller = new controller();
         root.getChildren().add(player1.getPlayerNode());

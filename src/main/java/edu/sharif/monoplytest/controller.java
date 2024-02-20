@@ -99,93 +99,176 @@ public class controller {
     @FXML
     private Circle circle1_27;
 
+    @FXML
     private Circle circle2_0;
+    @FXML
     private Circle circle2_1;
+    @FXML
     private Circle circle2_2;
+    @FXML
     private Circle circle2_3;
+    @FXML
     private Circle circle2_4;
+    @FXML
     private Circle circle2_5;
+    @FXML
     private Circle circle2_6;
+    @FXML
     private Circle circle2_7;
+    @FXML
     private Circle circle2_8;
+    @FXML
     private Circle circle2_9;
+    @FXML
     private Circle circle2_10;
+    @FXML
     private Circle circle2_11;
+    @FXML
     private Circle circle2_12;
+    @FXML
     private Circle circle2_13;
+    @FXML
     private Circle circle2_14;
+    @FXML
     private Circle circle2_15;
+    @FXML
     private Circle circle2_16;
+    @FXML
     private Circle circle2_17;
+    @FXML
     private Circle circle2_18;
+    @FXML
     private Circle circle2_19;
+    @FXML
     private Circle circle2_20;
+    @FXML
     private Circle circle2_21;
+    @FXML
     private Circle circle2_22;
+    @FXML
     private Circle circle2_23;
+    @FXML
     private Circle circle2_24;
+    @FXML
     private Circle circle2_25;
+    @FXML
     private Circle circle2_26;
+    @FXML
     private Circle circle2_27;
 
+    @FXML
     private Circle circle3_0;
+    @FXML
     private Circle circle3_1;
+    @FXML
     private Circle circle3_2;
+    @FXML
     private Circle circle3_3;
+    @FXML
     private Circle circle3_4;
+    @FXML
     private Circle circle3_5;
+    @FXML
     private Circle circle3_6;
+    @FXML
     private Circle circle3_7;
+    @FXML
     private Circle circle3_8;
+    @FXML
     private Circle circle3_9;
+    @FXML
     private Circle circle3_10;
+    @FXML
     private Circle circle3_11;
+    @FXML
     private Circle circle3_12;
+    @FXML
     private Circle circle3_13;
+    @FXML
     private Circle circle3_14;
+    @FXML
     private Circle circle3_15;
+    @FXML
     private Circle circle3_16;
+    @FXML
     private Circle circle3_17;
+    @FXML
     private Circle circle3_18;
+    @FXML
     private Circle circle3_19;
+    @FXML
     private Circle circle3_20;
+    @FXML
     private Circle circle3_21;
+    @FXML
     private Circle circle3_22;
+    @FXML
     private Circle circle3_23;
+    @FXML
     private Circle circle3_24;
+    @FXML
     private Circle circle3_25;
+    @FXML
     private Circle circle3_26;
+    @FXML
     private Circle circle3_27;
 
+    @FXML
     private Circle circle4_0;
+    @FXML
     private Circle circle4_1;
+    @FXML
     private Circle circle4_2;
+    @FXML
     private Circle circle4_3;
+    @FXML
     private Circle circle4_4;
+    @FXML
     private Circle circle4_5;
+    @FXML
     private Circle circle4_6;
+    @FXML
     private Circle circle4_7;
+    @FXML
     private Circle circle4_8;
+    @FXML
     private Circle circle4_9;
+    @FXML
     private Circle circle4_10;
+    @FXML
     private Circle circle4_11;
+    @FXML
     private Circle circle4_12;
+    @FXML
     private Circle circle4_13;
+    @FXML
     private Circle circle4_14;
+    @FXML
     private Circle circle4_15;
+    @FXML
     private Circle circle4_16;
+    @FXML
     private Circle circle4_17;
+    @FXML
     private Circle circle4_18;
+    @FXML
     private Circle circle4_19;
+    @FXML
     private Circle circle4_20;
+    @FXML
     private Circle circle4_21;
+    @FXML
     private Circle circle4_22;
+    @FXML
     private Circle circle4_23;
+    @FXML
     private Circle circle4_24;
+    @FXML
     private Circle circle4_25;
+    @FXML
     private Circle circle4_26;
+    @FXML
     private Circle circle4_27;
-    //TODO
 
     public ArrayList<Circle> circleList = new ArrayList<Circle>();
 
@@ -214,7 +297,7 @@ public class controller {
 
         dice1Pic.setImage(dicePics.get(dice1 - 1));
 
-        GameState.currentTurn.setPosition((GameState.currentTurn.getPosition() + dice1 ) % 27);
+        GameState.currentTurn.setPosition((GameState.currentTurn.getPosition() + dice1 ) % 28);
 
         //set the status of buy button
         if (getCurrentTileOfCurrentPlayer().getTileType().compareTo("ColoredTiles") == 0){
@@ -237,7 +320,11 @@ public class controller {
             }
         }
 
-        //TODO
+        if (currentTurn.playerId <= 2){
+            ((Pane)circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).getParent()).getChildren().add(playersList.get(currentTurn.playerId - 1).getPlayerNode());
+            playersList.get(currentTurn.playerId - 1).getPlayerNode().setLayoutX(circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).getLayoutX());
+            playersList.get(currentTurn.playerId - 1).getPlayerNode().setLayoutY(circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).getLayoutY());
+        }
     }
     //go to next turn
     @FXML
@@ -406,7 +493,18 @@ public class controller {
         ((Pane)circleList.get(0).getParent()).getChildren().add(playersList.get(0).getPlayerNode());
         playersList.get(0).getPlayerNode().setLayoutX(circleList.get(0).getLayoutX());
         playersList.get(0).getPlayerNode().setLayoutY(circleList.get(0).getLayoutY());
-        //TODO
+
+        ((Pane)circleList.get(28).getParent()).getChildren().add(playersList.get(1).getPlayerNode());
+        playersList.get(1).getPlayerNode().setLayoutX(circleList.get(28).getLayoutX());
+        playersList.get(1).getPlayerNode().setLayoutY(circleList.get(28).getLayoutY());
+
+        /*((Pane)circleList.get(56).getParent()).getChildren().add(playersList.get(2).getPlayerNode());
+        playersList.get(2).getPlayerNode().setLayoutX(circleList.get(56).getLayoutX());
+        playersList.get(2).getPlayerNode().setLayoutY(circleList.get(56).getLayoutY());
+
+        ((Pane)circleList.get(84).getParent()).getChildren().add(playersList.get(0).getPlayerNode());
+        playersList.get(3).getPlayerNode().setLayoutX(circleList.get(84).getLayoutX());
+        playersList.get(3).getPlayerNode().setLayoutY(circleList.get(84).getLayoutY());*/
     }
     private void updatePlayersBalances(){
         player1Balance.setText("1$ : " + GameState.playersList.get(0).getBalance());
@@ -429,6 +527,20 @@ public class controller {
         tileList.add(new ColoredTiles( 11,null , "BROWN" , "Danesh Kadeh Bargh11" , 120 , 20 , 0 ,0 ,110 ));
         tileList.add(new ColoredTiles( 12,null , "BROWN" , "Danesh Kadeh Bargh12" , 120 , 20 , 0 ,0 ,110 ));
         tileList.add(new ColoredTiles( 13,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
+        tileList.add(new ColoredTiles( 14,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
+        tileList.add(new ColoredTiles( 15,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
+        tileList.add(new ColoredTiles( 16,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
+        tileList.add(new ColoredTiles( 17,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
+        tileList.add(new ColoredTiles( 18,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
+        tileList.add(new ColoredTiles( 19,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
+        tileList.add(new ColoredTiles( 20,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
+        tileList.add(new ColoredTiles( 21,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
+        tileList.add(new ColoredTiles( 22,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
+        tileList.add(new ColoredTiles( 23,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
+        tileList.add(new ColoredTiles( 24,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
+        tileList.add(new ColoredTiles( 25,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
+        tileList.add(new ColoredTiles( 26,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
+        tileList.add(new ColoredTiles( 27,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
     }
     private Tile getCurrentTileOfCurrentPlayer(){
         int currentPosOfCurrentPlayer = GameState.currentTurn.getPosition();

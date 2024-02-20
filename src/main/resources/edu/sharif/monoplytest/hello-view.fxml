@@ -20,7 +20,7 @@
                         <Pane prefHeight="150.0" prefWidth="195.0" style="-fx-background-color: BLACK;">
                            <children>
                               <Circle fx:id="circle1_7" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_7" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -32,7 +32,7 @@
                         <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: PURPLE;">
                            <children>
                               <Circle fx:id="circle1_8" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_8" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -44,7 +44,7 @@
                         <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: PURPLE;">
                            <children>
                               <Circle fx:id="circle1_9" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_9" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -56,7 +56,7 @@
                         <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ORANGE;">
                            <children>
                               <Circle fx:id="circle1_10" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_10" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -68,7 +68,7 @@
                         <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: GREY;">
                            <children>
                               <Circle fx:id="circle1_11" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_11" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -80,7 +80,7 @@
                         <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ORANGE;">
                            <children>
                               <Circle fx:id="circle1_12" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_12" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -92,7 +92,7 @@
                         <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ORANGE;">
                            <children>
                               <Circle fx:id="circle1_13" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_13" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -104,7 +104,7 @@
                         <Pane prefHeight="150.0" prefWidth="210.0" style="-fx-background-color: BLACK;">
                            <children>
                               <Circle fx:id="circle1_14" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_14" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -120,7 +120,7 @@
                         <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: BLUE;">
                            <children>
                               <Circle fx:id="circle1_6" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_6" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -141,7 +141,7 @@
                         <Pane minHeight="100.0" minWidth="150.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: GREEN;">
                            <children>
                               <Circle fx:id="circle1_15" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_15" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -156,7 +156,7 @@
                         <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: BLUE;">
                            <children>
                               <Circle fx:id="circle1_5" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_5" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -177,7 +177,7 @@
                         <Pane minHeight="100.0" minWidth="150.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: GREEN;">
                            <children>
                               <Circle fx:id="circle1_16" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_16" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -193,7 +193,7 @@
                         <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: GREY;">
                            <children>
                               <Circle fx:id="circle1_4" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_4" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -214,7 +214,7 @@
                         <Pane minHeight="100.0" minWidth="150.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: BROWN;">
                            <children>
                               <Circle fx:id="circle1_17" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_17" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -230,7 +230,7 @@
                         <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: BLUE;">
                            <children>
                               <Circle fx:id="circle1_3" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_3" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -251,7 +251,7 @@
                         <Pane minHeight="100.0" minWidth="150.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: GREY;">
                            <children>
                               <Circle fx:id="circle1_18" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_18" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -266,7 +266,7 @@
                         <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: LIME;">
                            <children>
                               <Circle fx:id="circle1_2" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_2" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -287,7 +287,7 @@
                         <Pane minHeight="100.0" minWidth="150.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: BROWN;">
                            <children>
                               <Circle fx:id="circle1_19" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_19" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -302,7 +302,7 @@
                         <Pane minWidth="150.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: LIME;">
                            <children>
                               <Circle fx:id="circle1_1" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_1" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -327,7 +327,7 @@
                         <Pane minHeight="100.0" minWidth="150.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: BROWN;">
                            <children>
                               <Circle fx:id="circle1_20" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_20" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -342,7 +342,7 @@
                         <Pane minHeight="150.0" minWidth="150.0" prefHeight="150.0" prefWidth="198.0" style="-fx-background-color: BLACK;">
                            <children>
                               <Circle fx:id="circle1_0" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_0" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -354,7 +354,7 @@
                         <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: RED;">
                            <children>
                               <Circle fx:id="circle1_27" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_27" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -366,7 +366,7 @@
                         <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: RED;">
                            <children>
                               <Circle fx:id="circle1_26" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_26" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -378,7 +378,7 @@
                         <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: GREY;">
                            <children>
                               <Circle fx:id="circle1_25" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_25" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -390,7 +390,7 @@
                         <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: RED;">
                            <children>
                               <Circle fx:id="circle1_24" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_24" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -402,7 +402,7 @@
                         <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: PINK;">
                            <children>
                               <Circle fx:id="circle1_23" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_23" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -414,7 +414,7 @@
                         <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: PINK;">
                            <children>
                               <Circle fx:id="circle1_22" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_22" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
@@ -426,7 +426,7 @@
                         <Pane minHeight="150.0" minWidth="150.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: BLACK;">
                            <children>
                               <Circle fx:id="circle1_21" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <Circle fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="circle2_21" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                            </children>
