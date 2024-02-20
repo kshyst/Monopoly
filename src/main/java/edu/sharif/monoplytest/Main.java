@@ -23,8 +23,8 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Main extends Application {
-    Scene scene;
-    public Pane root;
+    public static Scene scene;
+    public static Pane root;
     public Parent CreateContent(Stage stage) throws IOException{
 
         AnimationTimer timer = new AnimationTimer() {
@@ -40,6 +40,7 @@ public class Main extends Application {
         root = fxmlLoader;
         return root;
     }
+
     private void onUpdate(Stage stage){
 
     }

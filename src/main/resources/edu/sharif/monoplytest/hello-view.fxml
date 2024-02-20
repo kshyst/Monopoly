@@ -346,7 +346,7 @@
                      </children></VBox>
                </children>
             </HBox>
-            <HBox layoutX="10.0" layoutY="910.0" prefHeight="150.0" prefWidth="900.0" VBox.vgrow="ALWAYS">
+            <HBox layoutX="10.0" layoutY="910.0" prefHeight="150.0" prefWidth="900.0" translateZ="-1.0" VBox.vgrow="ALWAYS">
                <children>
                   <VBox alignment="CENTER" minHeight="100.0" minWidth="100.0" style="-fx-background-color: BLUE;">
                      <children>

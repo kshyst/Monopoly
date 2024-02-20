@@ -5,13 +5,20 @@ import edu.sharif.monoplytest.model.Player;
 import edu.sharif.monoplytest.model.Tiles.ColoredTiles;
 import edu.sharif.monoplytest.model.Tiles.GO;
 import edu.sharif.monoplytest.model.Tiles.Tile;
+import javafx.animation.KeyValue;
+import javafx.animation.Transition;
+import javafx.animation.TranslateTransition;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.geometry.Point2D;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
+import javafx.util.Duration;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,6 +26,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import static edu.sharif.monoplytest.GameState.*;
+import static edu.sharif.monoplytest.Main.root;
+import static edu.sharif.monoplytest.Main.scene;
 
 public class controller {
     @FXML
@@ -328,9 +337,31 @@ public class controller {
             }
         }
 
-        ((Pane)circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).getParent()).getChildren().add(playersList.get(currentTurn.playerId - 1).getPlayerNode());
-        playersList.get(currentTurn.playerId - 1).getPlayerNode().setLayoutX(circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).getLayoutX());
-        playersList.get(currentTurn.playerId - 1).getPlayerNode().setLayoutY(circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).getLayoutY());
+        final Point2D windowCoord = new Point2D(scene.getWindow().getX(), scene.getWindow().getY());
+        final Point2D sceneCoord = new Point2D(scene.getX(), scene.getY());
+        int prevPosition = (currentTurn.getPosition() - dice1) % 28;
+        if (prevPosition < 0){
+            prevPosition+=28;
+        }
+        final Point2D nodeCoord1 = circleList.get(prevPosition + 28 * (currentTurn.playerId - 1)).localToScene(0.0, 0.0);
+        final Point2D nodeCoord2 = circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).localToScene(0.0, 0.0);
+
+        final double currentTileX = Math.round(windowCoord.getX() + sceneCoord.getX() + nodeCoord1.getX());
+        final double currentTileY = Math.round(windowCoord.getY() + sceneCoord.getY() + nodeCoord1.getY());
+
+        final double nextTileX = Math.round(windowCoord.getX() + sceneCoord.getX() + nodeCoord2.getX());
+        final double nextTileY = Math.round(windowCoord.getY() + sceneCoord.getY() + nodeCoord2.getY());
+
+        TranslateTransition translateTransition = new TranslateTransition();
+        translateTransition.setNode(playersList.get(currentTurn.playerId - 1).getPlayerNode());
+        translateTransition.setDuration(Duration.seconds(1));
+        translateTransition.setByX(nextTileX - currentTileX);
+        translateTransition.setByY(nextTileY - currentTileY);
+        translateTransition.play();
+
+        //playersList.get(currentTurn.playerId - 1).getPlayerNode().setLayoutX(circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).getLayoutX());
+        //playersList.get(currentTurn.playerId - 1).getPlayerNode().setLayoutY(circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).getLayoutY());
+
     }
     //go to next turn
     @FXML
@@ -497,22 +528,39 @@ public class controller {
         circleList.add(circle4_26);
         circleList.add(circle4_27);
 
-        ((Pane)circleList.get(0).getParent()).getChildren().add(playersList.get(0).getPlayerNode());
-        playersList.get(0).getPlayerNode().setLayoutX(circleList.get(0).getLayoutX());
-        playersList.get(0).getPlayerNode().setLayoutY(circleList.get(0).getLayoutY());
+        final Point2D windowCoord = new Point2D(scene.getWindow().getX(), scene.getWindow().getY());
+        final Point2D sceneCoord = new Point2D(scene.getX(), scene.getY());
+        int prevPosition = (currentTurn.getPosition() - dice1) % 28;
+        if (prevPosition < 0){
+            prevPosition+=28;
+        }
+        final Point2D nodeCoord1 = circleList.get(0).localToScene(0.0, 0.0);
+        final Point2D nodeCoord2 = circleList.get(28).localToScene(0.0, 0.0);
+        final Point2D nodeCoord3 = circleList.get(56).localToScene(0.0, 0.0);
+        final Point2D nodeCoord4 = circleList.get(84).localToScene(0.0, 0.0);
 
-        ((Pane)circleList.get(28).getParent()).getChildren().add(playersList.get(1).getPlayerNode());
-        playersList.get(1).getPlayerNode().setLayoutX(circleList.get(28).getLayoutX());
-        playersList.get(1).getPlayerNode().setLayoutY(circleList.get(28).getLayoutY());
+        final double currentTileX1 = Math.round(windowCoord.getX() + sceneCoord.getX() + nodeCoord1.getX());
+        final double currentTileY1 = Math.round(windowCoord.getY() + sceneCoord.getY() + nodeCoord1.getY());
+        final double currentTileX2 = Math.round(windowCoord.getX() + sceneCoord.getX() + nodeCoord2.getX());
+        final double currentTileY2 = Math.round(windowCoord.getY() + sceneCoord.getY() + nodeCoord2.getY());
+        final double currentTileX3 = Math.round(windowCoord.getX() + sceneCoord.getX() + nodeCoord3.getX());
+        final double currentTileY3 = Math.round(windowCoord.getY() + sceneCoord.getY() + nodeCoord3.getY());
+        final double currentTileX4 = Math.round(windowCoord.getX() + sceneCoord.getX() + nodeCoord4.getX());
+        final double currentTileY4 = Math.round(windowCoord.getY() + sceneCoord.getY() + nodeCoord4.getY());
 
 
-        ((Pane)circleList.get(56).getParent()).getChildren().add(playersList.get(2).getPlayerNode());
-        playersList.get(2).getPlayerNode().setLayoutX(circleList.get(56).getLayoutX());
-        playersList.get(2).getPlayerNode().setLayoutY(circleList.get(56).getLayoutY());
+        playersList.get(0).getPlayerNode().setTranslateX(20);
+        playersList.get(0).getPlayerNode().setTranslateY(800);
 
-        ((Pane)circleList.get(84).getParent()).getChildren().add(playersList.get(3).getPlayerNode());
-        playersList.get(3).getPlayerNode().setLayoutX(circleList.get(84).getLayoutX());
-        playersList.get(3).getPlayerNode().setLayoutY(circleList.get(84).getLayoutY());
+        playersList.get(1).getPlayerNode().setTranslateX(20);
+        playersList.get(1).getPlayerNode().setTranslateY(820);
+
+        playersList.get(2).getPlayerNode().setTranslateX(40);
+        playersList.get(2).getPlayerNode().setTranslateY(800);
+
+        playersList.get(3).getPlayerNode().setTranslateX(40);
+        playersList.get(3).getPlayerNode().setTranslateY(820);
+
     }
     private void updatePlayersBalances(){
         player1Balance.setText("1$ : " + GameState.playersList.get(0).getBalance());
