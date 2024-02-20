@@ -315,16 +315,15 @@ public class controller {
                 //get rent
                 if (!((ColoredTiles)getCurrentTileOfCurrentPlayer()).getOwner().arePlayersEqual(currentTurn.playerId)){
                     currentTurn.setBalance(currentTurn.getBalance() - ((ColoredTiles)getCurrentTileOfCurrentPlayer()).getTileRent());
+                    ((ColoredTiles)getCurrentTileOfCurrentPlayer()).getOwner().setBalance(((ColoredTiles)getCurrentTileOfCurrentPlayer()).getOwner().getBalance() + ((ColoredTiles)getCurrentTileOfCurrentPlayer()).getTileRent());
                     updatePlayersBalances();
                 }
             }
         }
 
-        if (currentTurn.playerId <= 2){
-            ((Pane)circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).getParent()).getChildren().add(playersList.get(currentTurn.playerId - 1).getPlayerNode());
-            playersList.get(currentTurn.playerId - 1).getPlayerNode().setLayoutX(circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).getLayoutX());
-            playersList.get(currentTurn.playerId - 1).getPlayerNode().setLayoutY(circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).getLayoutY());
-        }
+        ((Pane)circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).getParent()).getChildren().add(playersList.get(currentTurn.playerId - 1).getPlayerNode());
+        playersList.get(currentTurn.playerId - 1).getPlayerNode().setLayoutX(circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).getLayoutX());
+        playersList.get(currentTurn.playerId - 1).getPlayerNode().setLayoutY(circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).getLayoutY());
     }
     //go to next turn
     @FXML
@@ -462,6 +461,7 @@ public class controller {
         circleList.add(circle3_25);
         circleList.add(circle3_26);
         circleList.add(circle3_27);
+        circleList.add(circle4_0);
         circleList.add(circle4_1);
         circleList.add(circle4_2);
         circleList.add(circle4_3);
@@ -498,15 +498,14 @@ public class controller {
         playersList.get(1).getPlayerNode().setLayoutX(circleList.get(28).getLayoutX());
         playersList.get(1).getPlayerNode().setLayoutY(circleList.get(28).getLayoutY());
 
-        //TODO
 
-        /*((Pane)circleList.get(56).getParent()).getChildren().add(playersList.get(2).getPlayerNode());
+        ((Pane)circleList.get(56).getParent()).getChildren().add(playersList.get(2).getPlayerNode());
         playersList.get(2).getPlayerNode().setLayoutX(circleList.get(56).getLayoutX());
         playersList.get(2).getPlayerNode().setLayoutY(circleList.get(56).getLayoutY());
 
-        ((Pane)circleList.get(84).getParent()).getChildren().add(playersList.get(0).getPlayerNode());
+        ((Pane)circleList.get(84).getParent()).getChildren().add(playersList.get(3).getPlayerNode());
         playersList.get(3).getPlayerNode().setLayoutX(circleList.get(84).getLayoutX());
-        playersList.get(3).getPlayerNode().setLayoutY(circleList.get(84).getLayoutY());*/
+        playersList.get(3).getPlayerNode().setLayoutY(circleList.get(84).getLayoutY());
     }
     private void updatePlayersBalances(){
         player1Balance.setText("1$ : " + GameState.playersList.get(0).getBalance());
