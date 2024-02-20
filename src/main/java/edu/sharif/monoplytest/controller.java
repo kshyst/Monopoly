@@ -498,6 +498,8 @@ public class controller {
         playersList.get(1).getPlayerNode().setLayoutX(circleList.get(28).getLayoutX());
         playersList.get(1).getPlayerNode().setLayoutY(circleList.get(28).getLayoutY());
 
+        //TODO
+
         /*((Pane)circleList.get(56).getParent()).getChildren().add(playersList.get(2).getPlayerNode());
         playersList.get(2).getPlayerNode().setLayoutX(circleList.get(56).getLayoutX());
         playersList.get(2).getPlayerNode().setLayoutY(circleList.get(56).getLayoutY());
