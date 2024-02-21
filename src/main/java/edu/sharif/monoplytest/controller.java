@@ -419,33 +419,25 @@ public class controller {
 
         switch (currentTurn.playerId){
             case 1 :
-                for (int i = 0; i < playersList.get(0).getOwnedTiles().size() - 1; i++) {
-                    ownedTiles1.getItems().remove(i);
-                }
+                ownedTiles1.getItems().clear();
                 for (Tile tile : playersList.get(0).getOwnedTiles()){
                     ownedTiles1.getItems().add(((ColoredTiles)tile).getTileName());
                 }
                 break;
             case 2 :
-                for (int i = 0; i < playersList.get(1).getOwnedTiles().size() - 1; i++) {
-                    ownedTiles2.getItems().remove(i);
-                }
+                ownedTiles2.getItems().clear();
                 for (Tile tile : playersList.get(1).getOwnedTiles()){
                     ownedTiles2.getItems().add(((ColoredTiles)tile).getTileName());
                 }
                 break;
             case 3 :
-                for (int i = 0; i < playersList.get(2).getOwnedTiles().size() - 1; i++) {
-                    ownedTiles3.getItems().remove(i);
-                }
+                ownedTiles3.getItems().clear();
                 for (Tile tile : playersList.get(2).getOwnedTiles()){
                     ownedTiles3.getItems().add(((ColoredTiles)tile).getTileName());
                 }
                 break;
             case 4 :
-                for (int i = 0; i < playersList.get(3).getOwnedTiles().size() - 1; i++) {
-                    ownedTiles4.getItems().remove(i);
-                }
+                ownedTiles4.getItems().clear();
                 for (Tile tile : playersList.get(3).getOwnedTiles()){
                     ownedTiles4.getItems().add(((ColoredTiles)tile).getTileName());
                 }
