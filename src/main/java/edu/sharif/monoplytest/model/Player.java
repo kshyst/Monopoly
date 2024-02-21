@@ -76,6 +76,7 @@ public class Player {
         this.playerNode = playerNode;
     }
 
+
     public boolean arePlayersEqual(int playerId){
         return this.playerId == playerId;
     }

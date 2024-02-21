@@ -8,17 +8,22 @@ import edu.sharif.monoplytest.model.Tiles.Tile;
 import javafx.animation.KeyValue;
 import javafx.animation.Transition;
 import javafx.animation.TranslateTransition;
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Point2D;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
+import org.controlsfx.control.PropertySheet;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -40,6 +45,15 @@ public class controller {
     private Button buyButton;
     @FXML
     private Button sellButton;
+    @FXML
+    private ListView<String> ownedTiles1 = new ListView<>();
+    @FXML
+    private ListView<String> ownedTiles2 = new ListView<>();
+    @FXML
+    private ListView<String> ownedTiles3 = new ListView<>();
+    @FXML
+    private ListView<String> ownedTiles4 = new ListView<>();
+
     @FXML
     private Label currentTurnLabel;
     @FXML
@@ -393,11 +407,52 @@ public class controller {
         ((ColoredTiles)theCurrentTile).setOwner(GameState.currentTurn);
         playerOwnedTiles.add(theCurrentTile);
         GameState.currentTurn.setOwnedTiles(playerOwnedTiles);
+
         //reduce the balance of the player
         GameState.currentTurn.setBalance(GameState.currentTurn.getBalance() - ((ColoredTiles)theCurrentTile).getTilePrice());
 
         //disable the buy button
         buyButton.setDisable(true);
+
+        //change ownedTiles list
+        //TODO
+
+        switch (currentTurn.playerId){
+            case 1 :
+                for (int i = 0; i < playersList.get(0).getOwnedTiles().size() - 1; i++) {
+                    ownedTiles1.getItems().remove(i);
+                }
+                for (Tile tile : playersList.get(0).getOwnedTiles()){
+                    ownedTiles1.getItems().add(((ColoredTiles)tile).getTileName());
+                }
+                break;
+            case 2 :
+                for (int i = 0; i < playersList.get(1).getOwnedTiles().size() - 1; i++) {
+                    ownedTiles2.getItems().remove(i);
+                }
+                for (Tile tile : playersList.get(1).getOwnedTiles()){
+                    ownedTiles2.getItems().add(((ColoredTiles)tile).getTileName());
+                }
+                break;
+            case 3 :
+                for (int i = 0; i < playersList.get(2).getOwnedTiles().size() - 1; i++) {
+                    ownedTiles3.getItems().remove(i);
+                }
+                for (Tile tile : playersList.get(2).getOwnedTiles()){
+                    ownedTiles3.getItems().add(((ColoredTiles)tile).getTileName());
+                }
+                break;
+            case 4 :
+                for (int i = 0; i < playersList.get(3).getOwnedTiles().size() - 1; i++) {
+                    ownedTiles4.getItems().remove(i);
+                }
+                for (Tile tile : playersList.get(3).getOwnedTiles()){
+                    ownedTiles4.getItems().add(((ColoredTiles)tile).getTileName());
+                }
+                break;
+            default:
+                break;
+        }
 
         updatePlayersBalances();
     }

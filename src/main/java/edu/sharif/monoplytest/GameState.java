@@ -4,6 +4,8 @@ import edu.sharif.monoplytest.model.Player;
 import edu.sharif.monoplytest.model.Tiles.ColoredTiles;
 import edu.sharif.monoplytest.model.Tiles.GO;
 import edu.sharif.monoplytest.model.Tiles.Tile;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 
