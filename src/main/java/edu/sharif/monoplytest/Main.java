@@ -66,9 +66,9 @@ public class Main extends Application {
         GameState.playersList.set(2 , player3);
         GameState.playersList.set(3 , player4);
 
-        String s1 = "hi";
-        String s2 = "hi2";
-        
+        player1.isInTheGame = true;
+
+        player4.isInTheGame =true;
     }
     public static void main(String[] args) {
         launch(args);

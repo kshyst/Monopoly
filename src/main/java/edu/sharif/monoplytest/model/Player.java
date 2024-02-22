@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import java.util.ArrayList;
 
 public class Player {
+    public boolean isInTheGame = false;
     public int playerId;
     public Node playerNode;
     private String playersEthnicity;

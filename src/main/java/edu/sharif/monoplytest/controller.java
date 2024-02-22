@@ -381,9 +381,15 @@ public class controller implements Initializable {
             if (playersList.get(i).playerId == currentTurn.playerId){
                 if (i == playersList.size() - 1){
                     currentTurn = playersList.getFirst();
+                    if (!currentTurn.isInTheGame){
+                        goToNextTurn();
+                    }
                     break;
                 }
                 currentTurn = playersList.get(i+1);
+                if (!currentTurn.isInTheGame){
+                    goToNextTurn();
+                }
                 break;
             }
         }
