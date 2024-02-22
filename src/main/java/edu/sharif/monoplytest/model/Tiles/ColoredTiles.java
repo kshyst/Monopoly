@@ -9,13 +9,9 @@ public class ColoredTiles extends Tile {
     private int tilePrice;
     private int tileRent;
     private int tileHouseCount;
-    private int tileHotelCount;
-    private int tileMortgage;
-    private int tileMortgagePrice;
     private int tileHousePrice;
-    private int tileHotelPrice;
 
-    public ColoredTiles(int position , Player owner, String color, String tileName, int tilePrice, int tileRent, int tileHouseCount, int tileHotelCount, int tileHousePrice) {
+    public ColoredTiles(int position , Player owner, String color, String tileName, int tilePrice, int tileRent, int tileHouseCount, int tileHousePrice) {
         super(position , "ColoredTiles");
         this.owner = owner;
         this.color = color;
@@ -23,9 +19,7 @@ public class ColoredTiles extends Tile {
         this.tilePrice = tilePrice;
         this.tileRent = tileRent;
         this.tileHouseCount = tileHouseCount;
-        this.tileHotelCount = tileHotelCount;
         this.tileHousePrice = tileHousePrice;
-        this.tileHotelPrice = tileHotelPrice;
     }
 
     public Player getOwner() {
@@ -76,30 +70,6 @@ public class ColoredTiles extends Tile {
         this.tileHouseCount = tileHouseCount;
     }
 
-    public int getTileHotelCount() {
-        return tileHotelCount;
-    }
-
-    public void setTileHotelCount(int tileHotelCount) {
-        this.tileHotelCount = tileHotelCount;
-    }
-
-    public int getTileMortgage() {
-        return tileMortgage;
-    }
-
-    public void setTileMortgage(int tileMortgage) {
-        this.tileMortgage = tileMortgage;
-    }
-
-    public int getTileMortgagePrice() {
-        return tileMortgagePrice;
-    }
-
-    public void setTileMortgagePrice(int tileMortgagePrice) {
-        this.tileMortgagePrice = tileMortgagePrice;
-    }
-
     public int getTileHousePrice() {
         return tileHousePrice;
     }
@@ -108,11 +78,4 @@ public class ColoredTiles extends Tile {
         this.tileHousePrice = tileHousePrice;
     }
 
-    public int getTileHotelPrice() {
-        return tileHotelPrice;
-    }
-
-    public void setTileHotelPrice(int tileHotelPrice) {
-        this.tileHotelPrice = tileHotelPrice;
-    }
 }

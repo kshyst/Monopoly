@@ -25,6 +25,11 @@
                               <Circle fx:id="circle2_7" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_7" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_7" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@TileSprites/self.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
@@ -37,6 +42,11 @@
                               <Circle fx:id="circle2_8" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_8" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_8" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                                 <image>
+                                    <Image url="@TileSprites/bastani.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
@@ -49,6 +59,11 @@
                               <Circle fx:id="circle2_9" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_9" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_9" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                                 <image>
+                                    <Image url="@TileSprites/kiloei-export.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
@@ -78,19 +93,24 @@
                               <Circle fx:id="circle2_11" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_11" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_11" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                                 <image>
+                                    <Image url="@TileSprites/chance.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
                   </VBox>
                   <VBox layoutX="575.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ORANGE;">
+                        <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: BLACK;">
                            <children>
                               <Circle fx:id="circle1_12" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle2_12" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_12" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_12" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@TileSprites/alef0.png" />
                                  </image>
@@ -101,13 +121,13 @@
                   </VBox>
                   <VBox layoutX="675.0" layoutY="10.0" prefHeight="150.0" prefWidth="169.0">
                      <children>
-                        <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ORANGE;">
+                        <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: BLACK;">
                            <children>
                               <Circle fx:id="circle1_13" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle2_13" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_13" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_13" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="3.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@TileSprites/anjomaneslami.png" />
                                  </image>
@@ -124,6 +144,11 @@
                               <Circle fx:id="circle2_14" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_14" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_14" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@TileSprites/herasat.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
@@ -186,7 +211,10 @@
                               <Circle fx:id="circle2_5" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_5" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_5" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                                 <image>
+                                    <Image url="@TileSprites/chance.png" />
+                                 </image></ImageView>
                            </children>
                         </Pane>
                      </children>
@@ -298,6 +326,11 @@
                      <children>
                         <Pane minHeight="100.0" minWidth="150.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: GREY;">
                            <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+                                 <image>
+                                    <Image url="@TileSprites/chance.png" />
+                                 </image>
+                              </ImageView>
                               <Circle fx:id="circle1_18" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle2_18" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_18" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
@@ -329,9 +362,23 @@
                   <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" />
                   <VBox layoutX="110.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" />
                   <VBox layoutX="210.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" />
-                  <VBox layoutX="310.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" />
+                  <VBox layoutX="310.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Button fx:id="diceRollerButton" contentDisplay="CENTER" graphicTextGap="1.0" mnemonicParsing="false" onAction="#diceRoller" prefHeight="100.0" prefWidth="133.0" text=" Roll Dice" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                           <font>
+                              <Font name="OCR A Extended" size="15.0" />
+                           </font>
+                        </Button>
+                     </children></VBox>
                   <VBox layoutX="410.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" />
-                  <VBox layoutX="510.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" />
+                  <VBox layoutX="510.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Button fx:id="goToNextButton" contentDisplay="CENTER" disable="true" graphicTextGap="1.0" mnemonicParsing="false" onAction="#goToNextTurn" prefHeight="103.0" prefWidth="67.0" text=" Next Turn" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+                           <font>
+                              <Font name="OCR A Extended" size="15.0" />
+                           </font>
+                        </Button>
+                     </children></VBox>
                   <VBox layoutX="610.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" />
                   <VBox layoutX="710.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" />
                   <VBox layoutX="810.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" />
@@ -343,6 +390,11 @@
                               <Circle fx:id="circle2_19" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_19" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_19" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+                                 <image>
+                                    <Image url="@TileSprites/markazi.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children></VBox>
@@ -388,6 +440,11 @@
                               <Circle fx:id="circle2_20" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_20" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_20" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+                                 <image>
+                                    <Image url="@TileSprites/jabari.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children></VBox>
@@ -403,19 +460,24 @@
                               <Circle fx:id="circle2_0" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_0" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_0" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@TileSprites/darenergy.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
                   </VBox>
                   <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="150.0" style="-fx-background-color: BLUE;">
                      <children>
-                        <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: RED;">
+                        <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: BLACK;">
                            <children>
                               <Circle fx:id="circle1_27" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle2_27" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_27" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_27" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@TileSprites/dakhme.png" />
                                  </image>
@@ -432,7 +494,7 @@
                               <Circle fx:id="circle2_26" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_26" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_26" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
-                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@TileSprites/aquarium.png" />
                                  </image>
@@ -483,18 +545,28 @@
                               <Circle fx:id="circle2_23" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_23" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_23" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@TileSprites/sharifplus.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
                   </VBox>
                   <VBox alignment="CENTER" layoutX="800.0" layoutY="10.0" prefHeight="200.0" prefWidth="150.0" style="-fx-background-color: BLUE;">
                      <children>
-                        <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: PINK;">
+                        <Pane minWidth="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: BLACK;">
                            <children>
                               <Circle fx:id="circle1_22" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle2_22" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_22" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle4_22" fill="DODGERBLUE" layoutX="50.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@TileSprites/shariffastfood.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
@@ -503,6 +575,11 @@
                      <children>
                         <Pane minHeight="150.0" minWidth="150.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: BLACK;">
                            <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@TileSprites/parking.png" />
+                                 </image>
+                              </ImageView>
                               <Circle fx:id="circle1_21" fill="DODGERBLUE" layoutX="20.0" layoutY="20.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle2_21" fill="DODGERBLUE" layoutX="20.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="circle3_21" fill="DODGERBLUE" layoutX="50.0" layoutY="80.0" opacity="0.0" radius="1.0" stroke="BLACK" strokeType="INSIDE" />
@@ -515,19 +592,11 @@
             </HBox>
          </children>
       </VBox>
-      <Pane fx:id="startGameButton" layoutX="963.0" layoutY="357.0" prefHeight="210.0" prefWidth="200.0">
-         <children>
-            <Button fx:id="sellButton" disable="true" layoutX="-11.0" layoutY="43.0" mnemonicParsing="false" onAction="#sellButton" prefHeight="73.0" prefWidth="275.0">
-               <font>
-                  <Font name="OCR A Extended" size="14.0" />
-               </font>
-            </Button>
-         </children></Pane>
-      <Pane prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <Pane layoutX="72.0" layoutY="-1.0" prefHeight="200.0" prefWidth="200.0" />
-         </children>
-      </Pane>
+      <Button fx:id="sellButton" disable="true" layoutX="919.0" layoutY="370.0" mnemonicParsing="false" onAction="#sellButton" prefHeight="73.0" prefWidth="290.0">
+         <font>
+            <Font name="OCR A Extended" size="10.0" />
+         </font>
+      </Button>
       <Pane layoutX="915.0" layoutY="14.0" prefHeight="123.0" prefWidth="255.0">
          <children>
             <Label fx:id="player1Balance" prefHeight="32.0" prefWidth="255.0" text="1$ :" textAlignment="CENTER">
@@ -561,19 +630,9 @@
             </Label>
          </children>
       </Pane>
-      <Button fx:id="goToNextButton" contentDisplay="CENTER" disable="true" graphicTextGap="1.0" layoutX="1380.0" layoutY="368.0" mnemonicParsing="false" onAction="#goToNextTurn" prefHeight="73.0" prefWidth="98.0" text=" Next Turn" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
-         <font>
-            <Font name="OCR A Extended" size="15.0" />
-         </font>
-      </Button>
       <Pane layoutX="1095.0" layoutY="583.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button fx:id="diceRollerButton" contentDisplay="CENTER" graphicTextGap="1.0" layoutX="1259.0" layoutY="368.0" mnemonicParsing="false" onAction="#diceRoller" prefHeight="73.0" prefWidth="98.0" text=" Roll Dice" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true">
-         <font>
-            <Font name="OCR A Extended" size="15.0" />
-         </font>
-      </Button>
       <ListView fx:id="ownedTiles2" layoutX="1229.0" layoutY="483.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button layoutX="1290.0" layoutY="133.0" mnemonicParsing="false" onAction="#startButton" prefHeight="211.0" prefWidth="200.0" text="START GAME" textAlignment="CENTER" wrapText="true">
+      <Button fx:id="startGameButton" layoutX="1290.0" layoutY="133.0" mnemonicParsing="false" onAction="#startButton" prefHeight="211.0" prefWidth="200.0" text="START GAME" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="15.0" />
          </font>
@@ -581,9 +640,9 @@
       <ListView fx:id="ownedTiles3" layoutX="953.0" layoutY="704.0" prefHeight="200.0" prefWidth="200.0" />
       <ListView fx:id="ownedTiles1" layoutX="953.0" layoutY="483.0" prefHeight="200.0" prefWidth="200.0" />
       <ListView fx:id="ownedTiles4" layoutX="1229.0" layoutY="704.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button fx:id="buyButton" disable="true" layoutX="951.0" layoutY="246.0" mnemonicParsing="false" onAction="#buyButton" prefHeight="73.0" prefWidth="72.0" text="BUY">
+      <Button fx:id="buyButton" disable="true" layoutX="919.0" layoutY="297.0" mnemonicParsing="false" onAction="#buyButton" prefHeight="73.0" prefWidth="290.0">
          <font>
-            <Font name="OCR A Extended" size="19.0" />
+            <Font name="OCR A Extended" size="10.0" />
          </font>
       </Button>
    </children>

@@ -1,19 +1,12 @@
 package edu.sharif.monoplytest;
 
 import edu.sharif.monoplytest.model.Dice;
-import edu.sharif.monoplytest.model.Player;
 import edu.sharif.monoplytest.model.Tiles.ColoredTiles;
 import edu.sharif.monoplytest.model.Tiles.GO;
 import edu.sharif.monoplytest.model.Tiles.Tile;
-import javafx.animation.KeyValue;
-import javafx.animation.Transition;
 import javafx.animation.TranslateTransition;
-import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Point2D;
@@ -22,22 +15,16 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
-import org.controlsfx.control.PropertySheet;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.ResourceBundle;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import static edu.sharif.monoplytest.GameState.*;
-import static edu.sharif.monoplytest.Main.root;
 import static edu.sharif.monoplytest.Main.scene;
 
 public class controller implements Initializable {
@@ -46,7 +33,7 @@ public class controller implements Initializable {
     private String player3SelectedTileFromList;
     private String player4SelectedTileFromList;
     @FXML
-    private Pane startGameButton;
+    private Button startGameButton;
     @FXML
     private Button goToNextButton;
     @FXML
@@ -64,6 +51,7 @@ public class controller implements Initializable {
     @FXML
     public ListView<String> ownedTiles4 = new ListView<>();
 
+    //plauers info
     @FXML
     private Label currentTurnLabel;
     @FXML
@@ -304,9 +292,6 @@ public class controller implements Initializable {
     private Circle circle4_27;
 
     public ArrayList<Circle> circleList = new ArrayList<Circle>();
-
-
-    //DiceRoller
     public static int dice1;
     private ArrayList<Image> dicePics = new ArrayList<Image>(){
         {
@@ -325,25 +310,26 @@ public class controller implements Initializable {
         Random random = new Random();
         dice1 = Dice.getDice();
         if(dice1 == 6){
-            GameState.canRollDice = true;
+            canRollDice = true;
             diceRollerButton.setDisable(false);
             goToNextButton.setDisable(true);
         }
         else {
-            GameState.canRollDice = false;
+            canRollDice = false;
             diceRollerButton.setDisable(true);
             goToNextButton.setDisable(false);
         }
 
         dice1Pic.setImage(dicePics.get(dice1 - 1));
 
-        GameState.currentTurn.setPosition((GameState.currentTurn.getPosition() + dice1 ) % 28);
+        currentTurn.setPosition((currentTurn.getPosition() + dice1 ) % 28);
 
         //set the status of buy button
         if (getCurrentTileOfCurrentPlayer().getTileType().compareTo("ColoredTiles") == 0){
             if (((ColoredTiles)getCurrentTileOfCurrentPlayer()).getOwner() ==null){
-                if (((ColoredTiles)getCurrentTileOfCurrentPlayer()).getTilePrice() <= GameState.currentTurn.getBalance()){
+                if (((ColoredTiles)getCurrentTileOfCurrentPlayer()).getTilePrice() <= currentTurn.getBalance()){
                     buyButton.setDisable(false);
+                    buyButton.setText("BUY" + ((ColoredTiles) getCurrentTileOfCurrentPlayer()).getTileName());
                 }
             }
             else{
@@ -387,43 +373,67 @@ public class controller implements Initializable {
         //playersList.get(currentTurn.playerId - 1).getPlayerNode().setLayoutY(circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).getLayoutY());
 
     }
-    //go to next turn
     @FXML
     public void goToNextTurn(){
-        GameState.canRollDice = true;
+        canRollDice = true;
         goToNextButton.setDisable(true);
         diceRollerButton.setDisable(false);
         buyButton.setDisable(true);
-        for (int i = 0; i < GameState.playersList.size(); i++) {
-            if (GameState.playersList.get(i).playerId == GameState.currentTurn.playerId){
-                if (i == GameState.playersList.size() - 1){
-                    GameState.currentTurn = GameState.playersList.getFirst();
+        for (int i = 0; i < playersList.size(); i++) {
+            if (playersList.get(i).playerId == currentTurn.playerId){
+                if (i == playersList.size() - 1){
+                    currentTurn = playersList.getFirst();
                     break;
                 }
-                GameState.currentTurn = GameState.playersList.get(i+1);
+                currentTurn = playersList.get(i+1);
                 break;
             }
         }
-        GameState.printGameStateInfo();
-        currentTurnLabel.setText("Player " + String.valueOf(GameState.currentTurn.playerId) + "'s Turn");
+        printGameStateInfo();
+        currentTurnLabel.setText("Player " + String.valueOf(currentTurn.playerId) + "'s Turn");
 
+        sellButton.setDisable(true);
+        buyButton.setDisable(true);
+        sellButton.setText("");
+        buyButton.setText("");
 
+        ownedTiles1.setDisable(true);
+        ownedTiles2.setDisable(true);
+        ownedTiles3.setDisable(true);
+        ownedTiles4.setDisable(true);
+
+        switch (currentTurn.playerId){
+            case 1:
+                ownedTiles1.setDisable(false);
+                break;
+            case 2:
+                ownedTiles2.setDisable(false);
+                break;
+            case 3:
+                ownedTiles3.setDisable(false);
+                break;
+            case 4:
+                ownedTiles4.setDisable(false);
+                break;
+            default:
+                break;
+        }
     }
     @FXML
     public void buyButton(){
         //add the tile to the list of player's tiles
         Tile theCurrentTile = getCurrentTileOfCurrentPlayer();
-        ArrayList<Tile> playerOwnedTiles = GameState.currentTurn.getOwnedTiles();
-        ((ColoredTiles)theCurrentTile).setOwner(GameState.currentTurn);
+        ArrayList<Tile> playerOwnedTiles = currentTurn.getOwnedTiles();
+        ((ColoredTiles)theCurrentTile).setOwner(currentTurn);
         playerOwnedTiles.add(theCurrentTile);
-        GameState.currentTurn.setOwnedTiles(playerOwnedTiles);
+        currentTurn.setOwnedTiles(playerOwnedTiles);
 
         //reduce the balance of the player
-        GameState.currentTurn.setBalance(GameState.currentTurn.getBalance() - ((ColoredTiles)theCurrentTile).getTilePrice());
+        currentTurn.setBalance(currentTurn.getBalance() - ((ColoredTiles)theCurrentTile).getTilePrice());
 
         //disable the buy button
         buyButton.setDisable(true);
-
+        buyButton.setText("");
         //change ownedTiles list
 
         switch (currentTurn.playerId){
@@ -456,11 +466,46 @@ public class controller implements Initializable {
         }
 
         updatePlayersBalances();
+        sellButton.setDisable(true);
     }
     @FXML
     void sellButton(){
+        String selectedTile = null;
+        switch (currentTurn.playerId){
+            case 1:
+                selectedTile = player1SelectedTileFromList;
+                break;
+            case 2:
+                selectedTile = player2SelectedTileFromList;
+                break;
+            case 3:
+                selectedTile = player3SelectedTileFromList;
+                break;
+            case 4:
+                selectedTile = player4SelectedTileFromList;
+                break;
+            default:
+                break;
+        }
+
+        for (Tile tile : tileList){
+            if (((ColoredTiles)tile).getTileName().equals(selectedTile)){
+                ((ColoredTiles) tile).setOwner(null);
+                currentTurn.setBalance(currentTurn.getBalance() + ((ColoredTiles) tile).getTilePrice());
+                break;
+            }
+        }
+
+        for (Tile tile : currentTurn.getOwnedTiles()){
+            if (((ColoredTiles)tile).getTileName().equals(selectedTile)){
+                currentTurn.getOwnedTiles().remove(tile);
+                break;
+            }
+        }
 
         updatePlayersBalances();
+        sellButton.setDisable(true);
+        sellButton.setText("");
     }
     @FXML
     void startButton(){
@@ -618,43 +663,43 @@ public class controller implements Initializable {
 
     }
     private void updatePlayersBalances(){
-        player1Balance.setText("1$ : " + GameState.playersList.get(0).getBalance());
-        player2Balance.setText("2$ : " + GameState.playersList.get(1).getBalance());
-        player3Balance.setText("3$ : " + GameState.playersList.get(2).getBalance());
-        player4Balance.setText("4$ : " + GameState.playersList.get(3).getBalance());
+        player1Balance.setText("1$ : " + playersList.get(0).getBalance());
+        player2Balance.setText("2$ : " + playersList.get(1).getBalance());
+        player3Balance.setText("3$ : " + playersList.get(2).getBalance());
+        player4Balance.setText("4$ : " + playersList.get(3).getBalance());
     }
     private void initializeTiles(){
         tileList.add(new GO(0 , 100));
-        tileList.add(new ColoredTiles( 1,null , "BROWN" , "Danesh Kadeh Bargh1" , 100 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 2,null , "BROWN" , "Danesh Kadeh Bargh2" , 110 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 3,null , "BROWN" , "Danesh Kadeh Bargh3" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 4,null , "BROWN" , "Danesh Kadeh Bargh4" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 5,null , "BROWN" , "Danesh Kadeh Bargh5" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 6,null , "BROWN" , "Danesh Kadeh Bargh6" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 7,null , "BROWN" , "Danesh Kadeh Bargh7" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 8,null , "BROWN" , "Danesh Kadeh Bargh8" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 9,null , "BROWN" , "Danesh Kadeh Bargh9" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 10,null , "BROWN" , "Danesh Kadeh Bargh10" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 11,null , "BROWN" , "Danesh Kadeh Bargh11" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 12,null , "BROWN" , "Danesh Kadeh Bargh12" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 13,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 14,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 15,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 16,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 17,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 18,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 19,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 20,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 21,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 22,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 23,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 24,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 25,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 26,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
-        tileList.add(new ColoredTiles( 27,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 ,0 ,110 ));
+        tileList.add(new ColoredTiles( 1,null , "BROWN" , "Danesh Kadeh Bargh1" , 100 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 2,null , "BROWN" , "Danesh Kadeh Bargh2" , 110 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 3,null , "BROWN" , "Danesh Kadeh Bargh3" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 4,null , "BROWN" , "Danesh Kadeh Bargh4" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 5,null , "BROWN" , "Danesh Kadeh Bargh5" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 6,null , "BROWN" , "Danesh Kadeh Bargh6" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 7,null , "BROWN" , "Danesh Kadeh Bargh7" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 8,null , "BROWN" , "Danesh Kadeh Bargh8" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 9,null , "BROWN" , "Danesh Kadeh Bargh9" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 10,null , "BROWN" , "Danesh Kadeh Bargh10" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 11,null , "BROWN" , "Danesh Kadeh Bargh11" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 12,null , "BROWN" , "Danesh Kadeh Bargh12" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 13,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 14,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 15,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 16,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 17,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 18,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 19,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 20,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 21,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 22,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 23,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 24,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 25,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 26,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 27,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
     }
     private Tile getCurrentTileOfCurrentPlayer(){
-        int currentPosOfCurrentPlayer = GameState.currentTurn.getPosition();
+        int currentPosOfCurrentPlayer = currentTurn.getPosition();
         return tileList.get(currentPosOfCurrentPlayer);
     }
 
@@ -673,6 +718,7 @@ public class controller implements Initializable {
                 player1SelectedTileFromList = selectedItemTitle1;
 
                 sellButton.setText("Sell " + player1SelectedTileFromList);
+                sellButton.setDisable(false);
             }
         });
 
@@ -687,6 +733,7 @@ public class controller implements Initializable {
                 player2SelectedTileFromList = selectedItemTitle2;
 
                 sellButton.setText("Sell " + player2SelectedTileFromList);
+                sellButton.setDisable(false);
             }
         });
 
@@ -701,6 +748,7 @@ public class controller implements Initializable {
                 player3SelectedTileFromList = selectedItemTitle3;
 
                 sellButton.setText("Sell " + player3SelectedTileFromList);
+                sellButton.setDisable(false);
             }
         });
 
@@ -715,6 +763,7 @@ public class controller implements Initializable {
                 player4SelectedTileFromList = selectedItemTitle4;
 
                 sellButton.setText("Sell " + player4SelectedTileFromList);
+                sellButton.setDisable(false);
             }
         });
     }
