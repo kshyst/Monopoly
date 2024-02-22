@@ -9,6 +9,8 @@ import javafx.animation.KeyValue;
 import javafx.animation.Transition;
 import javafx.animation.TranslateTransition;
 import javafx.beans.Observable;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
@@ -27,14 +29,22 @@ import org.controlsfx.control.PropertySheet;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static edu.sharif.monoplytest.GameState.*;
 import static edu.sharif.monoplytest.Main.root;
 import static edu.sharif.monoplytest.Main.scene;
 
-public class controller {
+public class controller implements Initializable {
+    private String player1SelectedTileFromList;
+    private String player2SelectedTileFromList;
+    private String player3SelectedTileFromList;
+    private String player4SelectedTileFromList;
     @FXML
     private Pane startGameButton;
     @FXML
@@ -46,13 +56,13 @@ public class controller {
     @FXML
     private Button sellButton;
     @FXML
-    private ListView<String> ownedTiles1 = new ListView<>();
+    public ListView<String> ownedTiles1 = new ListView<>();
     @FXML
-    private ListView<String> ownedTiles2 = new ListView<>();
+    public ListView<String> ownedTiles2 = new ListView<>();
     @FXML
-    private ListView<String> ownedTiles3 = new ListView<>();
+    public ListView<String> ownedTiles3 = new ListView<>();
     @FXML
-    private ListView<String> ownedTiles4 = new ListView<>();
+    public ListView<String> ownedTiles4 = new ListView<>();
 
     @FXML
     private Label currentTurnLabel;
@@ -415,7 +425,6 @@ public class controller {
         buyButton.setDisable(true);
 
         //change ownedTiles list
-        //TODO
 
         switch (currentTurn.playerId){
             case 1 :
@@ -450,7 +459,6 @@ public class controller {
     }
     @FXML
     void sellButton(){
-
 
         updatePlayersBalances();
     }
@@ -648,5 +656,66 @@ public class controller {
     private Tile getCurrentTileOfCurrentPlayer(){
         int currentPosOfCurrentPlayer = GameState.currentTurn.getPosition();
         return tileList.get(currentPosOfCurrentPlayer);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        //get the selected tile from the tile list
+        ownedTiles1.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                String selectedItemTitle1 = "";
+                for (int i = 1; i < String.valueOf(ownedTiles1.getSelectionModel().getSelectedItems()).length() - 1; i++) {
+                    selectedItemTitle1 += String.valueOf(ownedTiles1.getSelectionModel().getSelectedItems()).charAt(i);
+                }
+
+                player1SelectedTileFromList = selectedItemTitle1;
+
+                sellButton.setText("Sell " + player1SelectedTileFromList);
+            }
+        });
+
+        ownedTiles2.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                String selectedItemTitle2 = "";
+                for (int i = 1; i < String.valueOf(ownedTiles2.getSelectionModel().getSelectedItems()).length() - 1; i++) {
+                    selectedItemTitle2 += String.valueOf(ownedTiles2.getSelectionModel().getSelectedItems()).charAt(i);
+                }
+
+                player2SelectedTileFromList = selectedItemTitle2;
+
+                sellButton.setText("Sell " + player2SelectedTileFromList);
+            }
+        });
+
+        ownedTiles3.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                String selectedItemTitle3 = "";
+                for (int i = 1; i < String.valueOf(ownedTiles3.getSelectionModel().getSelectedItems()).length() - 1; i++) {
+                    selectedItemTitle3 += String.valueOf(ownedTiles3.getSelectionModel().getSelectedItems()).charAt(i);
+                }
+
+                player3SelectedTileFromList = selectedItemTitle3;
+
+                sellButton.setText("Sell " + player3SelectedTileFromList);
+            }
+        });
+
+        ownedTiles4.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                String selectedItemTitle4 = "";
+                for (int i = 1; i < String.valueOf(ownedTiles4.getSelectionModel().getSelectedItems()).length() - 1; i++) {
+                    selectedItemTitle4 += String.valueOf(ownedTiles4.getSelectionModel().getSelectedItems()).charAt(i);
+                }
+
+                player4SelectedTileFromList = selectedItemTitle4;
+
+                sellButton.setText("Sell " + player4SelectedTileFromList);
+            }
+        });
     }
 }

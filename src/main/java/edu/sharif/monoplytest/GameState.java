@@ -4,10 +4,15 @@ import edu.sharif.monoplytest.model.Player;
 import edu.sharif.monoplytest.model.Tiles.ColoredTiles;
 import edu.sharif.monoplytest.model.Tiles.GO;
 import edu.sharif.monoplytest.model.Tiles.Tile;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.Initializable;
 
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class GameState {
     public static ArrayList<Tile> tileList = new ArrayList<>();

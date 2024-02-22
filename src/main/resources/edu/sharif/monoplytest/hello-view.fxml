@@ -515,7 +515,19 @@
             </HBox>
          </children>
       </VBox>
-      <Pane fx:id="startGameButton" layoutX="963.0" layoutY="357.0" prefHeight="210.0" prefWidth="200.0" />
+      <Pane fx:id="startGameButton" layoutX="963.0" layoutY="357.0" prefHeight="210.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="sellButton" disable="true" layoutX="-11.0" layoutY="43.0" mnemonicParsing="false" onAction="#sellButton" prefHeight="73.0" prefWidth="275.0">
+               <font>
+                  <Font name="OCR A Extended" size="14.0" />
+               </font>
+            </Button>
+         </children></Pane>
+      <Pane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Pane layoutX="72.0" layoutY="-1.0" prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </Pane>
       <Pane layoutX="915.0" layoutY="14.0" prefHeight="123.0" prefWidth="255.0">
          <children>
             <Label fx:id="player1Balance" prefHeight="32.0" prefWidth="255.0" text="1$ :" textAlignment="CENTER">
@@ -538,24 +550,6 @@
                   <Font name="OCR A Extended" size="30.0" />
                </font>
             </Label>
-         </children>
-      </Pane>
-      <Pane layoutX="995.0" layoutY="240.0" prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <Button fx:id="sellButton" disable="true" layoutY="-1.0" mnemonicParsing="false" onAction="#sellButton" prefHeight="73.0" prefWidth="72.0" text="SELL">
-               <font>
-                  <Font name="OCR A Extended" size="19.0" />
-               </font>
-            </Button>
-            <Pane layoutX="72.0" layoutY="-1.0" prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <Button fx:id="buyButton" disable="true" layoutY="-1.0" mnemonicParsing="false" onAction="#buyButton" prefHeight="73.0" prefWidth="72.0" text="BUY">
-                     <font>
-                        <Font name="OCR A Extended" size="19.0" />
-                     </font>
-                  </Button>
-               </children>
-            </Pane>
          </children>
       </Pane>
       <Pane layoutX="923.0" layoutY="137.0" prefHeight="72.0" prefWidth="345.0">
@@ -587,5 +581,10 @@
       <ListView fx:id="ownedTiles3" layoutX="953.0" layoutY="704.0" prefHeight="200.0" prefWidth="200.0" />
       <ListView fx:id="ownedTiles1" layoutX="953.0" layoutY="483.0" prefHeight="200.0" prefWidth="200.0" />
       <ListView fx:id="ownedTiles4" layoutX="1229.0" layoutY="704.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="buyButton" disable="true" layoutX="951.0" layoutY="246.0" mnemonicParsing="false" onAction="#buyButton" prefHeight="73.0" prefWidth="72.0" text="BUY">
+         <font>
+            <Font name="OCR A Extended" size="19.0" />
+         </font>
+      </Button>
    </children>
 </Pane>
