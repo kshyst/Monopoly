@@ -434,35 +434,7 @@ public class controller implements Initializable {
         buyButton.setText("");
         //change ownedTiles list
 
-        switch (currentTurn.playerId){
-            case 1 :
-                ownedTiles1.getItems().clear();
-                for (Tile tile : playersList.get(0).getOwnedTiles()){
-                    ownedTiles1.getItems().add(((ColoredTiles)tile).getTileName());
-                }
-                break;
-            case 2 :
-                ownedTiles2.getItems().clear();
-                for (Tile tile : playersList.get(1).getOwnedTiles()){
-                    ownedTiles2.getItems().add(((ColoredTiles)tile).getTileName());
-                }
-                break;
-            case 3 :
-                ownedTiles3.getItems().clear();
-                for (Tile tile : playersList.get(2).getOwnedTiles()){
-                    ownedTiles3.getItems().add(((ColoredTiles)tile).getTileName());
-                }
-                break;
-            case 4 :
-                ownedTiles4.getItems().clear();
-                for (Tile tile : playersList.get(3).getOwnedTiles()){
-                    ownedTiles4.getItems().add(((ColoredTiles)tile).getTileName());
-                }
-                break;
-            default:
-                break;
-        }
-
+        updatePlayerTileList();
         updatePlayersBalances();
         sellButton.setDisable(true);
     }
@@ -503,6 +475,7 @@ public class controller implements Initializable {
             }
         }
 
+        updatePlayerTileList();
         updatePlayersBalances();
         sellButton.setDisable(true);
         sellButton.setText("");
@@ -701,6 +674,36 @@ public class controller implements Initializable {
     private Tile getCurrentTileOfCurrentPlayer(){
         int currentPosOfCurrentPlayer = currentTurn.getPosition();
         return tileList.get(currentPosOfCurrentPlayer);
+    }
+    private void updatePlayerTileList(){
+        switch (currentTurn.playerId){
+            case 1 :
+                ownedTiles1.getItems().clear();
+                for (Tile tile : playersList.get(0).getOwnedTiles()){
+                    ownedTiles1.getItems().add(((ColoredTiles)tile).getTileName());
+                }
+                break;
+            case 2 :
+                ownedTiles2.getItems().clear();
+                for (Tile tile : playersList.get(1).getOwnedTiles()){
+                    ownedTiles2.getItems().add(((ColoredTiles)tile).getTileName());
+                }
+                break;
+            case 3 :
+                ownedTiles3.getItems().clear();
+                for (Tile tile : playersList.get(2).getOwnedTiles()){
+                    ownedTiles3.getItems().add(((ColoredTiles)tile).getTileName());
+                }
+                break;
+            case 4 :
+                ownedTiles4.getItems().clear();
+                for (Tile tile : playersList.get(3).getOwnedTiles()){
+                    ownedTiles4.getItems().add(((ColoredTiles)tile).getTileName());
+                }
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
