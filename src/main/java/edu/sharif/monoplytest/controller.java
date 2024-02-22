@@ -1,9 +1,7 @@
 package edu.sharif.monoplytest;
 
 import edu.sharif.monoplytest.model.Dice;
-import edu.sharif.monoplytest.model.Tiles.ColoredTiles;
-import edu.sharif.monoplytest.model.Tiles.GO;
-import edu.sharif.monoplytest.model.Tiles.Tile;
+import edu.sharif.monoplytest.model.Tiles.*;
 import javafx.animation.TranslateTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -489,10 +487,12 @@ public class controller implements Initializable {
         }
 
         for (Tile tile : tileList){
-            if (((ColoredTiles)tile).getTileName().equals(selectedTile)){
-                ((ColoredTiles) tile).setOwner(null);
-                currentTurn.setBalance(currentTurn.getBalance() + ((ColoredTiles) tile).getTilePrice());
-                break;
+            if (tile.getTileType().equals("ColoredTiles")){
+                if (((ColoredTiles)tile).getTileName().equals(selectedTile)){
+                    ((ColoredTiles) tile).setOwner(null);
+                    currentTurn.setBalance(currentTurn.getBalance() + ((ColoredTiles) tile).getTilePrice());
+                    break;
+                }
             }
         }
 
@@ -669,34 +669,34 @@ public class controller implements Initializable {
         player4Balance.setText("4$ : " + playersList.get(3).getBalance());
     }
     private void initializeTiles(){
-        tileList.add(new GO(0 , 100));
-        tileList.add(new ColoredTiles( 1,null , "BROWN" , "Danesh Kadeh Bargh1" , 100 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 2,null , "BROWN" , "Danesh Kadeh Bargh2" , 110 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 3,null , "BROWN" , "Danesh Kadeh Bargh3" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 4,null , "BROWN" , "Danesh Kadeh Bargh4" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 5,null , "BROWN" , "Danesh Kadeh Bargh5" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 6,null , "BROWN" , "Danesh Kadeh Bargh6" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 7,null , "BROWN" , "Danesh Kadeh Bargh7" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 8,null , "BROWN" , "Danesh Kadeh Bargh8" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 9,null , "BROWN" , "Danesh Kadeh Bargh9" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 10,null , "BROWN" , "Danesh Kadeh Bargh10" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 11,null , "BROWN" , "Danesh Kadeh Bargh11" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 12,null , "BROWN" , "Danesh Kadeh Bargh12" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 13,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 14,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 15,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 16,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 17,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 18,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 19,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 20,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 21,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 22,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 23,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 24,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 25,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 26,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
-        tileList.add(new ColoredTiles( 27,null , "BROWN" , "Danesh Kadeh Bargh13" , 120 , 20 , 0 , 110 ));
+        tileList.add(new GO(0 , 1000));
+        tileList.add(new ColoredTiles( 1,null , "GREEN" , "kelisa" , 100 , 20 , 0 , 110 ));
+        tileList.add(new ColoredTiles( 2,null , "GREEN" , "arsheh" , 120 , 25 , 0 , 150 ));
+        tileList.add(new ColoredTiles( 3,null , "GRAY" , "newyork" , 150 , 30 , 0 , 200 ));
+        tileList.add(new ColoredTiles( 4,null , "BLUE" , "avang" , 160 , 40 , 0 , 200 ));
+        tileList.add(new Chance(5));
+        tileList.add(new ColoredTiles( 6,null , "BLUE" , "abdoos" , 170 , 45 , 0 , 210 ));
+        tileList.add(new GO(0 , -5));
+        tileList.add(new ColoredTiles( 8,null , "LIME" , "bastani tarasht" , 180 , 50 , 0 , 220 ));
+        tileList.add(new ColoredTiles( 9,null , "LIME" , "kiloei" , 190 , 55 , 0 , 220 ));
+        tileList.add(new ColoredTiles( 10,null , "YELLOW" , "markaz graphic" , 200 , 60 , 0 , 250 ));
+        tileList.add(new Chance(11));
+        tileList.add(new ColoredTiles( 12,null , "YELLOW" , "alef 0" , 220 , 65 , 0 , 250 ));
+        tileList.add(new ColoredTiles( 13,null , "YELLOW" , "anjooman eslaami" , 230 , 70 , 0 , 250 ));
+        tileList.add(new Jail(14));
+        tileList.add(new ColoredTiles( 15,null , "BROWN" , "cluna" , 250 , 80 , 0 , 300 ));
+        tileList.add(new ColoredTiles( 16,null , "BROWN" , "ghorfeh soboone" , 260 , 85 , 0 , 300 ));
+        tileList.add(new ColoredTiles( 17,null , "GRAY" , "jakooz" , 280 , 90 , 0 , 350 ));
+        tileList.add(new Chance(18));
+        tileList.add(new ColoredTiles( 19,null , "PINK" , "library markazi" , 300 , 100 , 0 , 400 ));
+        tileList.add(new ColoredTiles( 20,null , "PINK" , "jabari" , 320 , 105 , 0 , 400 ));
+        tileList.add(new GO(21 , -10));
+        tileList.add(new ColoredTiles( 22,null , "PURPLE" , "sharif fast food" , 360 , 110 , 0 , 450 ));
+        tileList.add(new ColoredTiles( 23,null , "PURPLE" , "sharif plus" , 380 , 115 , 0 , 450 ));
+        tileList.add(new ColoredTiles( 24,null , "RED" , "lobby" , 400 , 120 , 0 , 500 ));
+        tileList.add(new ColoredTiles( 25,null , "GRAY" , "loop" , 430 , 125 , 0 , 500 ));
+        tileList.add(new ColoredTiles( 26,null , "RED" , "aquarium" , 450 , 130 , 0 , 500 ));
+        tileList.add(new ColoredTiles( 27,null , "RED" , "dakhme" , 500 , 140 , 0 , 500 ));
     }
     private Tile getCurrentTileOfCurrentPlayer(){
         int currentPosOfCurrentPlayer = currentTurn.getPosition();
@@ -705,7 +705,6 @@ public class controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         //get the selected tile from the tile list
         ownedTiles1.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
