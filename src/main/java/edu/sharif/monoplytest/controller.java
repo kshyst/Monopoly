@@ -11,8 +11,10 @@ import javafx.geometry.Point2D;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
 
@@ -31,7 +33,7 @@ public class controller implements Initializable {
     private String player3SelectedTileFromList;
     private String player4SelectedTileFromList;
     @FXML
-    private Button startGameButton;
+    private Pane startGameButton;
     @FXML
     private Button goToNextButton;
     @FXML
@@ -60,6 +62,16 @@ public class controller implements Initializable {
     private Label player3Balance;
     @FXML
     private Label player4Balance;
+    @FXML
+    private Label gameLog;
+    @FXML
+    private TextField player1UserName;
+    @FXML
+    private TextField player2UserName;
+    @FXML
+    private TextField player3UserName;
+    @FXML
+    private TextField player4UserName;
     //circles
     @FXML
     private Circle circle1_0;
@@ -340,9 +352,16 @@ public class controller implements Initializable {
                 if (!((ColoredTiles)getCurrentTileOfCurrentPlayer()).getOwner().arePlayersEqual(currentTurn.playerId)){
                     currentTurn.setBalance(currentTurn.getBalance() - ((ColoredTiles)getCurrentTileOfCurrentPlayer()).getTileRent());
                     ((ColoredTiles)getCurrentTileOfCurrentPlayer()).getOwner().setBalance(((ColoredTiles)getCurrentTileOfCurrentPlayer()).getOwner().getBalance() + ((ColoredTiles)getCurrentTileOfCurrentPlayer()).getTileRent());
+                    gameLog.setText(currentTurn.getPlayerUserName() + " payed " + ((ColoredTiles) getCurrentTileOfCurrentPlayer()).getTileRent() + "$ as rent to " + ((ColoredTiles) getCurrentTileOfCurrentPlayer()).getOwner().getPlayerUserName());
                     updatePlayersBalances();
                 }
             }
+        }
+
+        //jail
+        if (getCurrentTileOfCurrentPlayer().getTileType().equals("Jail")){
+            currentTurn.setJailTime(1);
+            gameLog.setText(currentTurn.getPlayerUserName() + " went to herasat for " + currentTurn.getJailTime() + " rounds");
         }
 
         final Point2D windowCoord = new Point2D(scene.getWindow().getX(), scene.getWindow().getY());
@@ -370,6 +389,7 @@ public class controller implements Initializable {
         //playersList.get(currentTurn.playerId - 1).getPlayerNode().setLayoutX(circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).getLayoutX());
         //playersList.get(currentTurn.playerId - 1).getPlayerNode().setLayoutY(circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).getLayoutY());
 
+        //gameLog.setText("");
     }
     @FXML
     public void goToNextTurn(){
@@ -381,20 +401,30 @@ public class controller implements Initializable {
             if (playersList.get(i).playerId == currentTurn.playerId){
                 if (i == playersList.size() - 1){
                     currentTurn = playersList.getFirst();
-                    if (!currentTurn.isInTheGame){
+                    if (!currentTurn.isInTheGame()){
+                        goToNextTurn();
+                    }
+                    if (currentTurn.getJailTime() > 0){
+                        currentTurn.setJailTime(currentTurn.getJailTime() - 1);
+                        gameLog.setText(currentTurn.getPlayerUserName()+ " is in herasat for " + currentTurn.getJailTime() + " more rounds");
                         goToNextTurn();
                     }
                     break;
                 }
                 currentTurn = playersList.get(i+1);
-                if (!currentTurn.isInTheGame){
+                if (!currentTurn.isInTheGame()){
+                    goToNextTurn();
+                }
+                if (currentTurn.getJailTime() > 0){
+                    currentTurn.setJailTime(currentTurn.getJailTime() - 1);
+                    gameLog.setText(currentTurn.getPlayerUserName()+ " is in herasat for " + currentTurn.getJailTime() + " more rounds");
                     goToNextTurn();
                 }
                 break;
             }
         }
         printGameStateInfo();
-        currentTurnLabel.setText("Player " + String.valueOf(currentTurn.playerId) + "'s Turn");
+        currentTurnLabel.setText(currentTurn.getPlayerUserName() + "'s Turn");
 
         sellButton.setDisable(true);
         buyButton.setDisable(true);
@@ -422,6 +452,7 @@ public class controller implements Initializable {
             default:
                 break;
         }
+
     }
     @FXML
     public void buyButton(){
@@ -443,6 +474,8 @@ public class controller implements Initializable {
         updatePlayerTileList();
         updatePlayersBalances();
         sellButton.setDisable(true);
+
+        gameLog.setText(currentTurn.getPlayerUserName() + " bought " + ((ColoredTiles) theCurrentTile).getTileName());
     }
     @FXML
     void sellButton(){
@@ -485,12 +518,20 @@ public class controller implements Initializable {
         updatePlayersBalances();
         sellButton.setDisable(true);
         sellButton.setText("");
+
+        gameLog.setText(currentTurn.getPlayerUserName() + " sold " + selectedTile);
     }
     @FXML
     void startButton(){
+        playersList.get(0).setPlayerUserName(player1UserName.getText());
+        playersList.get(1).setPlayerUserName(player2UserName.getText());
+        playersList.get(2).setPlayerUserName(player3UserName.getText());
+        playersList.get(3).setPlayerUserName(player4UserName.getText());
+
         startGameButton.setDisable(true);
         startGameButton.setOpacity(0);
-
+        currentTurnLabel.setText(currentTurn.getPlayerUserName() + "'s Turn");
+        updatePlayerTileList();
         updatePlayersBalances();
         initializeTiles();
 
@@ -642,10 +683,22 @@ public class controller implements Initializable {
 
     }
     private void updatePlayersBalances(){
-        player1Balance.setText("1$ : " + playersList.get(0).getBalance());
-        player2Balance.setText("2$ : " + playersList.get(1).getBalance());
-        player3Balance.setText("3$ : " + playersList.get(2).getBalance());
-        player4Balance.setText("4$ : " + playersList.get(3).getBalance());
+        if (playersList.get(0).isInTheGame()){
+            player1Balance.setText( playersList.get(0).getPlayerUserName() + "'s balance : " + playersList.get(0).getBalance());
+            player1Balance.setVisible(true);
+        }
+        if (playersList.get(1).isInTheGame()){
+            player2Balance.setText( playersList.get(1).getPlayerUserName() + "'s balance : " + playersList.get(1).getBalance());
+            player2Balance.setVisible(true);
+        }
+        if (playersList.get(2).isInTheGame()){
+            player3Balance.setText( playersList.get(2).getPlayerUserName() + "'s balance : " + playersList.get(2).getBalance());
+            player3Balance.setVisible(true);
+        }
+        if (playersList.get(3).isInTheGame()){
+            player4Balance.setText( playersList.get(3).getPlayerUserName() + "'s balance : " + playersList.get(3).getBalance());
+            player4Balance.setVisible(true);
+        }
     }
     private void initializeTiles(){
         tileList.add(new GO(0 , 1000));

@@ -36,7 +36,7 @@ public class Main extends Application {
 
         timer.start();
 
-        Pane fxmlLoader = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("hello-view.fxml")));
+        Pane fxmlLoader = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("GameBoard.fxml")));
         root = fxmlLoader;
         return root;
     }
@@ -66,9 +66,9 @@ public class Main extends Application {
         GameState.playersList.set(2 , player3);
         GameState.playersList.set(3 , player4);
 
-        player1.isInTheGame = true;
+        player1.setInTheGame(true);
 
-        player4.isInTheGame =true;
+        player4.setInTheGame(true);
     }
     public static void main(String[] args) {
         launch(args);

@@ -7,28 +7,15 @@ import javafx.scene.Node;
 import java.util.ArrayList;
 
 public class Player {
-    public boolean isInTheGame = false;
+    private boolean isInTheGame = false;
+    private int jailTime = 0;
     public int playerId;
+    private String playerUserName;
     public Node playerNode;
     private String playersEthnicity;
-    private String playersAvatar;
     private ArrayList<Tile> ownedTiles = new ArrayList<Tile>();
     private int position;
     private int balance;
-    private double xPos;
-    private double yPos;
-
-    public Player(Node playerNode, String playersEthnicity, String playersAvatar, ArrayList<Tile> ownedTiles, int position, int balance, double xPos, double yPos) {
-        this.playerNode = playerNode;
-        this.playersEthnicity = playersEthnicity;
-        this.playersAvatar = playersAvatar;
-        this.ownedTiles = ownedTiles;
-        this.position = position;
-        this.balance = balance;
-        this.xPos = xPos;
-        this.yPos = yPos;
-        GameState.playersList.add(this);
-    }
 
     public Player(int playerId , int balance , Node playerNode) {
         this.playerId = playerId;
@@ -77,6 +64,37 @@ public class Player {
         this.playerNode = playerNode;
     }
 
+    public boolean isInTheGame() {
+        return isInTheGame;
+    }
+
+    public void setInTheGame(boolean inTheGame) {
+        isInTheGame = inTheGame;
+    }
+
+    public int getJailTime() {
+        return jailTime;
+    }
+
+    public void setJailTime(int jailTime) {
+        this.jailTime = jailTime;
+    }
+
+    public String getPlayerUserName() {
+        return playerUserName;
+    }
+
+    public void setPlayerUserName(String playerUserName) {
+        this.playerUserName = playerUserName;
+    }
+
+    public String getPlayersEthnicity() {
+        return playersEthnicity;
+    }
+
+    public void setPlayersEthnicity(String playersEthnicity) {
+        this.playersEthnicity = playersEthnicity;
+    }
 
     public boolean arePlayersEqual(int playerId){
         return this.playerId == playerId;

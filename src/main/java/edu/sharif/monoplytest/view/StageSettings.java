@@ -14,7 +14,7 @@ public class StageSettings {
 
     public static void CreateStage(Stage stage , Scene scene){
         stage.setTitle(stageTitle);
-        stage.setResizable(false);
+        stage.setResizable(true);
         /*stage.setHeight(stageHeigth);
         stage.setWidth(stageWidth);*/
         //stage.getIcons().add(new Image(new File("src/main/resources/com/spaceinvader/spaceinvader/Sprites/icon.jpg").toURI().toString()));
