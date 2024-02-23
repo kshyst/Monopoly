@@ -12,7 +12,7 @@ public class Player {
     public int playerId;
     private String playerUserName;
     public Node playerNode;
-    private String playersEthnicity;
+    private Ethnicity playersEthnicity;
     private ArrayList<Tile> ownedTiles = new ArrayList<Tile>();
     private int position;
     private int balance;
@@ -88,11 +88,11 @@ public class Player {
         this.playerUserName = playerUserName;
     }
 
-    public String getPlayersEthnicity() {
+    public Ethnicity getPlayersEthnicity() {
         return playersEthnicity;
     }
 
-    public void setPlayersEthnicity(String playersEthnicity) {
+    public void setPlayersEthnicity(Ethnicity playersEthnicity) {
         this.playersEthnicity = playersEthnicity;
     }
 

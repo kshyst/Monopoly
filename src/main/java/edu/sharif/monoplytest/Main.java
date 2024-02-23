@@ -1,5 +1,6 @@
 package edu.sharif.monoplytest;
 
+import edu.sharif.monoplytest.model.Ethnicity;
 import edu.sharif.monoplytest.model.Player;
 import edu.sharif.monoplytest.view.StageSettings;
 import javafx.animation.AnimationTimer;

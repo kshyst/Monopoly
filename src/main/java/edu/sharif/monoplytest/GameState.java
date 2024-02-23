@@ -1,5 +1,6 @@
 package edu.sharif.monoplytest;
 
+import edu.sharif.monoplytest.model.Ethnicity;
 import edu.sharif.monoplytest.model.Player;
 import edu.sharif.monoplytest.model.Tiles.ColoredTiles;
 import edu.sharif.monoplytest.model.Tiles.GO;
@@ -17,9 +18,12 @@ import java.util.ResourceBundle;
 public class GameState {
     public static ArrayList<Tile> tileList = new ArrayList<>();
     public static ArrayList<Player> playersList = new ArrayList<>();
+    public static ArrayList<Ethnicity> ethnicities = new ArrayList<>();
     public static int playerCount = 4;
     public static Player currentTurn;
     public static boolean canRollDice = false;
+
+
 
     public static void printGameStateInfo(){
         System.out.println("... Players Positions ...");

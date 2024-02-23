@@ -2,6 +2,7 @@ package edu.sharif.monoplytest;
 
 import edu.sharif.monoplytest.model.ChanceCard;
 import edu.sharif.monoplytest.model.Dice;
+import edu.sharif.monoplytest.model.Ethnicity;
 import edu.sharif.monoplytest.model.Tiles.*;
 import javafx.animation.TranslateTransition;
 import javafx.beans.value.ChangeListener;
@@ -25,6 +26,7 @@ import java.util.ResourceBundle;
 
 import static edu.sharif.monoplytest.GameState.*;
 import static edu.sharif.monoplytest.Main.scene;
+import static edu.sharif.monoplytest.model.Ethnicity.ethnicityList;
 
 public class controller implements Initializable {
     private String player1SelectedTileFromList;
@@ -53,6 +55,14 @@ public class controller implements Initializable {
     public ListView<String> ownedTiles3 = new ListView<>();
     @FXML
     public ListView<String> ownedTiles4 = new ListView<>();
+    @FXML
+    private ComboBox<String> player1Ethnicity;
+    @FXML
+    private ComboBox<String> player2Ethnicity;
+    @FXML
+    private ComboBox<String> player3Ethnicity;
+    @FXML
+    private ComboBox<String> player4Ethnicity;
 
     //plauers info
     @FXML
@@ -839,6 +849,44 @@ public class controller implements Initializable {
                     default:
                         break;
                 }
+            }
+        });
+
+
+        Ethnicity jewish = new Ethnicity("jewish" , 1 , 0.8 , 0.2 , 0);
+        Ethnicity black = new Ethnicity("black" , 0.2 , 0.5 , 0 , 0.1 );
+        Ethnicity redNeck = new Ethnicity("redNeck" , 0.6 , 0.5 , 1 , 0.5);
+        Ethnicity blondeWhiteWoman = new Ethnicity("blondeWhiteWoman" , 0 , 1 , 1 , 1);
+        Ethnicity asian = new Ethnicity("asian" , 0.9 , 0.6 , 0.5 , 0.3);
+        Ethnicity persian = new Ethnicity("persian" , 0.1 , 1 , 1 , 0);
+
+        player1Ethnicity.setItems(FXCollections.observableArrayList(ethnicityList));
+        player2Ethnicity.setItems(FXCollections.observableArrayList(ethnicityList));
+        player3Ethnicity.setItems(FXCollections.observableArrayList(ethnicityList));
+        player4Ethnicity.setItems(FXCollections.observableArrayList(ethnicityList));
+
+        player1Ethnicity.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                playersList.get(0).setPlayersEthnicity(Ethnicity.findEthnicity(player1Ethnicity.getSelectionModel().getSelectedItem()));
+            }
+        });
+        player2Ethnicity.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                playersList.get(1).setPlayersEthnicity(Ethnicity.findEthnicity(player1Ethnicity.getSelectionModel().getSelectedItem()));
+            }
+        });
+        player3Ethnicity.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                playersList.get(2).setPlayersEthnicity(Ethnicity.findEthnicity(player1Ethnicity.getSelectionModel().getSelectedItem()));
+            }
+        });
+        player4Ethnicity.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                playersList.get(3).setPlayersEthnicity(Ethnicity.findEthnicity(player1Ethnicity.getSelectionModel().getSelectedItem()));
             }
         });
         //get the selected tile from the tile list
