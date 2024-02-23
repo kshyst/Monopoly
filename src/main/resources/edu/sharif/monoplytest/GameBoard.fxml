@@ -647,6 +647,11 @@
             <Font name="OCR A Extended" size="10.0" />
          </font>
       </Button>
+      <Button fx:id="chanceButton" disable="true" layoutX="919.0" layoutY="443.0" mnemonicParsing="false" onAction="#chanceCardPicker" prefHeight="73.0" prefWidth="290.0">
+         <font>
+            <Font name="OCR A Extended" size="10.0" />
+         </font>
+      </Button>
       <Pane fx:id="startGameButton" prefHeight="900.0" prefWidth="1920.0" style="-fx-background-color: WHITE;">
          <children>
             <Button layoutX="21.0" layoutY="502.0" mnemonicParsing="false" onAction="#startButton" prefHeight="87.0" prefWidth="200.0" text="START GAME" textAlignment="CENTER" wrapText="true">

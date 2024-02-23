@@ -1,5 +1,6 @@
 package edu.sharif.monoplytest;
 
+import edu.sharif.monoplytest.model.ChanceCard;
 import edu.sharif.monoplytest.model.Dice;
 import edu.sharif.monoplytest.model.Tiles.*;
 import javafx.animation.TranslateTransition;
@@ -40,6 +41,8 @@ public class controller implements Initializable {
     private Button buyButton;
     @FXML
     private Button sellButton;
+    @FXML
+    private Button chanceButton;
     @FXML
     private ChoiceBox<String> playerCount;
     @FXML
@@ -301,7 +304,7 @@ public class controller implements Initializable {
     @FXML
     private Circle circle4_27;
 
-    public ArrayList<Circle> circleList = new ArrayList<Circle>();
+    public static ArrayList<Circle> circleList = new ArrayList<Circle>();
     public static int dice1;
     private ArrayList<Image> dicePics = new ArrayList<Image>(){
         {
@@ -333,6 +336,29 @@ public class controller implements Initializable {
         dice1Pic.setImage(dicePics.get(dice1 - 1));
 
         currentTurn.setPosition((currentTurn.getPosition() + dice1 ) % 28);
+
+
+        final Point2D windowCoord = new Point2D(scene.getWindow().getX(), scene.getWindow().getY());
+        final Point2D sceneCoord = new Point2D(scene.getX(), scene.getY());
+        int prevPosition = (currentTurn.getPosition() - dice1) % 28;
+        if (prevPosition < 0){
+            prevPosition+=28;
+        }
+        final Point2D nodeCoord1 = circleList.get(prevPosition + 28 * (currentTurn.playerId - 1)).localToScene(0.0, 0.0);
+        final Point2D nodeCoord2 = circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).localToScene(0.0, 0.0);
+
+        final double currentTileX = Math.round(windowCoord.getX() + sceneCoord.getX() + nodeCoord1.getX());
+        final double currentTileY = Math.round(windowCoord.getY() + sceneCoord.getY() + nodeCoord1.getY());
+
+        final double nextTileX = Math.round(windowCoord.getX() + sceneCoord.getX() + nodeCoord2.getX());
+        final double nextTileY = Math.round(windowCoord.getY() + sceneCoord.getY() + nodeCoord2.getY());
+
+        TranslateTransition translateTransition = new TranslateTransition();
+        translateTransition.setNode(playersList.get(currentTurn.playerId - 1).getPlayerNode());
+        translateTransition.setDuration(Duration.seconds(1));
+        translateTransition.setByX(nextTileX - currentTileX);
+        translateTransition.setByY(nextTileY - currentTileY);
+        translateTransition.play();
 
         //set the status of buy button
         if (getCurrentTileOfCurrentPlayer().getTileType().compareTo("ColoredTiles") == 0){
@@ -369,43 +395,25 @@ public class controller implements Initializable {
             if (((GO)getCurrentTileOfCurrentPlayer()).getName().equals("dar")){
                 currentTurn.setBalance(currentTurn.getBalance() + ((GO)getCurrentTileOfCurrentPlayer()).getSalary());
                 gameLog.setText(currentTurn.getPlayerUserName() + " earned" + ((GO)getCurrentTileOfCurrentPlayer()).getSalary() + "$ for passing dar energy");
+                updatePlayersBalances();
             }
             else if (((GO)getCurrentTileOfCurrentPlayer()).getName().equals("self")){
                 currentTurn.setBalance(currentTurn.getBalance() + ((GO)getCurrentTileOfCurrentPlayer()).getSalary());
                 gameLog.setText(currentTurn.getPlayerUserName() + " spent " + ((GO)getCurrentTileOfCurrentPlayer()).getSalary() * -1 + "$ for eating at self");
+                updatePlayersBalances();
             }
             else {
                 currentTurn.setBalance(currentTurn.getBalance() + ((GO)getCurrentTileOfCurrentPlayer()).getSalary());
                 gameLog.setText(currentTurn.getPlayerUserName() + " spent " + ((GO)getCurrentTileOfCurrentPlayer()).getSalary() * -1 + "$ for parking");
+                updatePlayersBalances();
             }
         }
 
-        final Point2D windowCoord = new Point2D(scene.getWindow().getX(), scene.getWindow().getY());
-        final Point2D sceneCoord = new Point2D(scene.getX(), scene.getY());
-        int prevPosition = (currentTurn.getPosition() - dice1) % 28;
-        if (prevPosition < 0){
-            prevPosition+=28;
+        //Chance
+        if(getCurrentTileOfCurrentPlayer().getTileType().equals("Chance")){
+            chanceButton.setText("pick a chance card");
+            chanceButton.setDisable(false);
         }
-        final Point2D nodeCoord1 = circleList.get(prevPosition + 28 * (currentTurn.playerId - 1)).localToScene(0.0, 0.0);
-        final Point2D nodeCoord2 = circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).localToScene(0.0, 0.0);
-
-        final double currentTileX = Math.round(windowCoord.getX() + sceneCoord.getX() + nodeCoord1.getX());
-        final double currentTileY = Math.round(windowCoord.getY() + sceneCoord.getY() + nodeCoord1.getY());
-
-        final double nextTileX = Math.round(windowCoord.getX() + sceneCoord.getX() + nodeCoord2.getX());
-        final double nextTileY = Math.round(windowCoord.getY() + sceneCoord.getY() + nodeCoord2.getY());
-
-        TranslateTransition translateTransition = new TranslateTransition();
-        translateTransition.setNode(playersList.get(currentTurn.playerId - 1).getPlayerNode());
-        translateTransition.setDuration(Duration.seconds(1));
-        translateTransition.setByX(nextTileX - currentTileX);
-        translateTransition.setByY(nextTileY - currentTileY);
-        translateTransition.play();
-
-        //playersList.get(currentTurn.playerId - 1).getPlayerNode().setLayoutX(circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).getLayoutX());
-        //playersList.get(currentTurn.playerId - 1).getPlayerNode().setLayoutY(circleList.get(currentTurn.getPosition() + 28 * (currentTurn.playerId - 1)).getLayoutY());
-
-        //gameLog.setText("");
     }
     @FXML
     public void goToNextTurn(){
@@ -703,6 +711,13 @@ public class controller implements Initializable {
         playersList.get(3).getPlayerNode().setTranslateY(820);
 
     }
+    @FXML
+    void chanceCardPicker(){
+        ChanceCard.applyChanceCard(ChanceCard.getRandomChanceCard() , gameLog);
+        chanceButton.setDisable(true);
+        chanceButton.setText("");
+        updatePlayersBalances();
+    }
     private void updatePlayersBalances(){
         if (playersList.get(0).isInTheGame()){
             player1Balance.setText( playersList.get(0).getPlayerUserName() + "'s balance : " + playersList.get(0).getBalance());
@@ -760,25 +775,25 @@ public class controller implements Initializable {
             case 1 :
                 ownedTiles1.getItems().clear();
                 for (Tile tile : playersList.get(0).getOwnedTiles()){
-                    ownedTiles1.getItems().add(((ColoredTiles)tile).getTileName());
+                    ownedTiles1.getItems().add(((ColoredTiles)tile).getTileName() + " - rent: " +  ((ColoredTiles) tile).getTileRent());
                 }
                 break;
             case 2 :
                 ownedTiles2.getItems().clear();
                 for (Tile tile : playersList.get(1).getOwnedTiles()){
-                    ownedTiles2.getItems().add(((ColoredTiles)tile).getTileName());
+                    ownedTiles2.getItems().add(((ColoredTiles)tile).getTileName() + " - rent: " +  ((ColoredTiles) tile).getTileRent());
                 }
                 break;
             case 3 :
                 ownedTiles3.getItems().clear();
                 for (Tile tile : playersList.get(2).getOwnedTiles()){
-                    ownedTiles3.getItems().add(((ColoredTiles)tile).getTileName());
+                    ownedTiles3.getItems().add(((ColoredTiles)tile).getTileName() + " - rent: " +  ((ColoredTiles) tile).getTileRent());
                 }
                 break;
             case 4 :
                 ownedTiles4.getItems().clear();
                 for (Tile tile : playersList.get(3).getOwnedTiles()){
-                    ownedTiles4.getItems().add(((ColoredTiles)tile).getTileName());
+                    ownedTiles4.getItems().add(((ColoredTiles)tile).getTileName() + " - rent: " +  ((ColoredTiles) tile).getTileRent());
                 }
                 break;
             default:
