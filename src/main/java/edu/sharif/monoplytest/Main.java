@@ -50,10 +50,10 @@ public class Main extends Application {
         StageSettings.CreateStage(stage , scene);
 
         //create players
-        Player player1 = new Player(1 , 500, new Circle(5,5,10,Color.rgb(255,255,25)));
-        Player player2 = new Player(2 , 550, new Circle(5,5,10,Color.rgb(102 , 0 , 51)));
-        Player player3 = new Player(3 , 600, new Circle(5,5,10,Color.rgb(0,152,51)));
-        Player player4 = new Player(4 , 650, new Circle(5,5,10,Color.rgb(51,51,255)));
+        Player player1 = new Player(1 , 1000, new Circle(5,5,10,Color.rgb(255,255,25)));
+        Player player2 = new Player(2 , 1000, new Circle(5,5,10,Color.rgb(102 , 0 , 51)));
+        Player player3 = new Player(3 , 1000, new Circle(5,5,10,Color.rgb(0,152,51)));
+        Player player4 = new Player(4 , 1000, new Circle(5,5,10,Color.rgb(51,51,255)));
 
         root.getChildren().add(player1.getPlayerNode());
         root.getChildren().add(player2.getPlayerNode());
@@ -66,9 +66,6 @@ public class Main extends Application {
         GameState.playersList.set(2 , player3);
         GameState.playersList.set(3 , player4);
 
-        player1.setInTheGame(true);
-
-        player4.setInTheGame(true);
     }
     public static void main(String[] args) {
         launch(args);

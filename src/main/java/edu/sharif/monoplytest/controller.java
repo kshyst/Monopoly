@@ -5,13 +5,11 @@ import edu.sharif.monoplytest.model.Tiles.*;
 import javafx.animation.TranslateTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Point2D;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -42,6 +40,8 @@ public class controller implements Initializable {
     private Button buyButton;
     @FXML
     private Button sellButton;
+    @FXML
+    private ChoiceBox<String> playerCount;
     @FXML
     public ListView<String> ownedTiles1 = new ListView<>();
     @FXML
@@ -364,6 +364,22 @@ public class controller implements Initializable {
             gameLog.setText(currentTurn.getPlayerUserName() + " went to herasat for " + currentTurn.getJailTime() + " rounds");
         }
 
+        //Go
+        if(getCurrentTileOfCurrentPlayer().getTileType().equals("GO")){
+            if (((GO)getCurrentTileOfCurrentPlayer()).getName().equals("dar")){
+                currentTurn.setBalance(currentTurn.getBalance() + ((GO)getCurrentTileOfCurrentPlayer()).getSalary());
+                gameLog.setText(currentTurn.getPlayerUserName() + " earned" + ((GO)getCurrentTileOfCurrentPlayer()).getSalary() + "$ for passing dar energy");
+            }
+            else if (((GO)getCurrentTileOfCurrentPlayer()).getName().equals("self")){
+                currentTurn.setBalance(currentTurn.getBalance() + ((GO)getCurrentTileOfCurrentPlayer()).getSalary());
+                gameLog.setText(currentTurn.getPlayerUserName() + " spent " + ((GO)getCurrentTileOfCurrentPlayer()).getSalary() * -1 + "$ for eating at self");
+            }
+            else {
+                currentTurn.setBalance(currentTurn.getBalance() + ((GO)getCurrentTileOfCurrentPlayer()).getSalary());
+                gameLog.setText(currentTurn.getPlayerUserName() + " spent " + ((GO)getCurrentTileOfCurrentPlayer()).getSalary() * -1 + "$ for parking");
+            }
+        }
+
         final Point2D windowCoord = new Point2D(scene.getWindow().getX(), scene.getWindow().getY());
         final Point2D sceneCoord = new Point2D(scene.getX(), scene.getY());
         int prevPosition = (currentTurn.getPosition() - dice1) % 28;
@@ -523,6 +539,10 @@ public class controller implements Initializable {
     }
     @FXML
     void startButton(){
+        for (int i = 0; i < GameState.playerCount; i++) {
+            playersList.get(i).setInTheGame(true);
+        }
+
         playersList.get(0).setPlayerUserName(player1UserName.getText());
         playersList.get(1).setPlayerUserName(player2UserName.getText());
         playersList.get(2).setPlayerUserName(player3UserName.getText());
@@ -534,6 +554,7 @@ public class controller implements Initializable {
         updatePlayerTileList();
         updatePlayersBalances();
         initializeTiles();
+
 
         circleList.add(circle1_0);
         circleList.add(circle1_1);
@@ -701,14 +722,14 @@ public class controller implements Initializable {
         }
     }
     private void initializeTiles(){
-        tileList.add(new GO(0 , 1000));
+        tileList.add(new GO(0 , 1000 , "dar"));
         tileList.add(new ColoredTiles( 1,null , "GREEN" , "kelisa" , 100 , 20 , 0 , 110 ));
         tileList.add(new ColoredTiles( 2,null , "GREEN" , "arsheh" , 120 , 25 , 0 , 150 ));
         tileList.add(new ColoredTiles( 3,null , "GRAY" , "newyork" , 150 , 30 , 0 , 200 ));
         tileList.add(new ColoredTiles( 4,null , "BLUE" , "avang" , 160 , 40 , 0 , 200 ));
         tileList.add(new Chance(5));
         tileList.add(new ColoredTiles( 6,null , "BLUE" , "abdoos" , 170 , 45 , 0 , 210 ));
-        tileList.add(new GO(0 , -5));
+        tileList.add(new GO(0 , -5 , "self"));
         tileList.add(new ColoredTiles( 8,null , "LIME" , "bastani tarasht" , 180 , 50 , 0 , 220 ));
         tileList.add(new ColoredTiles( 9,null , "LIME" , "kiloei" , 190 , 55 , 0 , 220 ));
         tileList.add(new ColoredTiles( 10,null , "YELLOW" , "markaz graphic" , 200 , 60 , 0 , 250 ));
@@ -722,7 +743,7 @@ public class controller implements Initializable {
         tileList.add(new Chance(18));
         tileList.add(new ColoredTiles( 19,null , "PINK" , "library markazi" , 300 , 100 , 0 , 400 ));
         tileList.add(new ColoredTiles( 20,null , "PINK" , "jabari" , 320 , 105 , 0 , 400 ));
-        tileList.add(new GO(21 , -10));
+        tileList.add(new GO(21 , -10 , "parking"));
         tileList.add(new ColoredTiles( 22,null , "PURPLE" , "sharif fast food" , 360 , 110 , 0 , 450 ));
         tileList.add(new ColoredTiles( 23,null , "PURPLE" , "sharif plus" , 380 , 115 , 0 , 450 ));
         tileList.add(new ColoredTiles( 24,null , "RED" , "lobby" , 400 , 120 , 0 , 500 ));
@@ -767,6 +788,44 @@ public class controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        playerCount.setItems(FXCollections.observableArrayList(new ArrayList<String>(){
+            {
+                add("2");
+                add("3");
+                add("4");
+            }
+        }));
+        playerCount.setValue("4");
+        playerCount.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                GameState.playerCount = Integer.valueOf(playerCount.getSelectionModel().getSelectedIndex() + 2);
+
+                switch (GameState.playerCount){
+                    case 2:
+                        player1UserName.setDisable(false);
+                        player2UserName.setDisable(false);
+                        player3UserName.setDisable(true);
+                        player4UserName.setDisable(true);
+                        break;
+                    case 3:
+                        player1UserName.setDisable(false);
+                        player2UserName.setDisable(false);
+                        player3UserName.setDisable(false);
+                        player4UserName.setDisable(true);
+                        break;
+                    case 4:
+                        player1UserName.setDisable(false);
+                        player2UserName.setDisable(false);
+                        player3UserName.setDisable(false);
+                        player4UserName.setDisable(false);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
         //get the selected tile from the tile list
         ownedTiles1.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override

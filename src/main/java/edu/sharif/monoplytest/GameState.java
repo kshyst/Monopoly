@@ -17,6 +17,7 @@ import java.util.ResourceBundle;
 public class GameState {
     public static ArrayList<Tile> tileList = new ArrayList<>();
     public static ArrayList<Player> playersList = new ArrayList<>();
+    public static int playerCount = 4;
     public static Player currentTurn;
     public static boolean canRollDice = false;
 
